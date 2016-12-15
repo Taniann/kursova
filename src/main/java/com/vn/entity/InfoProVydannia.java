@@ -1,0 +1,171 @@
+package com.vn.entity;
+
+/**
+ * Created by Таня on 12.12.2016.
+ */
+
+import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Інформація про видання")
+public class InfoProVydannia {
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
+    @Column(name = "id видання", length = 6, nullable = false)
+    private Long idVydannia;
+
+    @Column(name = "Повна назва видання")
+    private String povnaNazva;
+
+    @Column(name = "Коротка назва видання")
+    private String korotkaNazva;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id виду видання", nullable = false)
+    private VydVydannia vydVydannia;
+
+    @Column(name = "кількість сторінок")
+    private Integer kilkistStorinok;
+
+//    @Column(name = "id виду обкладинки")
+    @OneToOne
+    private VydObkladynky vydObkladynky;
+
+    @Column(name = "тираж")
+    private Long tyrazh;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id формату", nullable = false)
+    private Format format;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id способу друку", nullable = false)
+    private SposibDruku sposibDruku;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id автора №1", nullable = false)
+    private InfoProAvtora infoProAvtora1;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id автора №2", nullable = false)
+    private InfoProAvtora infoProAvtora2;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id автора №3", nullable = false)
+    private InfoProAvtora infoProAvtora3;
+
+    public InfoProVydannia () {}
+
+    public InfoProVydannia(Long idVydannia, String povnaNazva, String korotkaNazva, VydVydannia vydVydannia, Integer kilkistStorinok, VydObkladynky vydObkladynky, Long tyrazh, Format format, SposibDruku sposibDruku, InfoProAvtora infoProAvtora1, InfoProAvtora infoProAvtora2, InfoProAvtora infoProAvtora3) {
+        this.idVydannia = idVydannia;
+        this.povnaNazva = povnaNazva;
+        this.korotkaNazva = korotkaNazva;
+        this.vydVydannia = vydVydannia;
+        this.kilkistStorinok = kilkistStorinok;
+        this.vydObkladynky = vydObkladynky;
+        this.tyrazh = tyrazh;
+        this.format = format;
+        this.sposibDruku = sposibDruku;
+        this.infoProAvtora1 = infoProAvtora1;
+        this.infoProAvtora2 = infoProAvtora2;
+        this.infoProAvtora3 = infoProAvtora3;
+    }
+
+    public Long getIdVydannia() {
+        return idVydannia;
+    }
+
+    public void setIdVydannia(Long idVydannia) {
+        this.idVydannia = idVydannia;
+    }
+
+    public String getPovnaNazva() {
+        return povnaNazva;
+    }
+
+    public void setPovnaNazva(String povnaNazva) {
+        this.povnaNazva = povnaNazva;
+    }
+
+    public String getKorotkaNazva() {
+        return korotkaNazva;
+    }
+
+    public void setKorotkaNazva(String korotkaNazva) {
+        this.korotkaNazva = korotkaNazva;
+    }
+
+    public VydVydannia getVydVydannia() {
+        return vydVydannia;
+    }
+
+    public void setVydVydannia(VydVydannia vydVydannia) {
+        this.vydVydannia = vydVydannia;
+    }
+
+    public Integer getKilkistStorinok() {
+        return kilkistStorinok;
+    }
+
+    public void setKilkistStorinok(Integer kilkistStorinok) {
+        this.kilkistStorinok = kilkistStorinok;
+    }
+
+    public VydObkladynky getVydObkladynky() {
+        return vydObkladynky;
+    }
+
+    public void setVydObkladynky(VydObkladynky vydObkladynky) {
+        this.vydObkladynky = vydObkladynky;
+    }
+
+    public Long getTyrazh() {
+        return tyrazh;
+    }
+
+    public void setTyrazh(Long tyrazh) {
+        this.tyrazh = tyrazh;
+    }
+
+    public Format getFormat() {
+        return format;
+    }
+
+    public void setFormat(Format format) {
+        this.format = format;
+    }
+
+    public SposibDruku getSposibDruku() {
+        return sposibDruku;
+    }
+
+    public void setSposibDruku(SposibDruku sposibDruku) {
+        this.sposibDruku = sposibDruku;
+    }
+
+    public InfoProAvtora getInfoProAvtora1() {
+        return infoProAvtora1;
+    }
+
+    public void setInfoProAvtora1(InfoProAvtora infoProAvtora1) {
+        this.infoProAvtora1 = infoProAvtora1;
+    }
+
+    public InfoProAvtora getInfoProAvtora2() {
+        return infoProAvtora2;
+    }
+
+    public void setInfoProAvtora2(InfoProAvtora infoProAvtora2) {
+        this.infoProAvtora2 = infoProAvtora2;
+    }
+
+    public InfoProAvtora getInfoProAvtora3() {
+        return infoProAvtora3;
+    }
+
+    public void setInfoProAvtora3(InfoProAvtora infoProAvtora3) {
+        this.infoProAvtora3 = infoProAvtora3;
+    }
+}
