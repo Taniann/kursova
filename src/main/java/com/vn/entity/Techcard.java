@@ -8,58 +8,58 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
-@Table(name = "Технологічна картка видання")
+@Table
 public class Techcard {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id технічної картки", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idTechCarty;
 
-//    @Column(name = "id видання")
     @OneToOne
+    @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
-//    @Column(name = "id виду роботи")
-    @OneToOne
-    private VydRoboty vydRoboty; //one to many
+    @OneToMany
+    @JoinColumn
+    private Set<VydRoboty> vydRobotySet; //one to many
 
-//    @Column(name = "id виконавця")
     @OneToOne
+    @PrimaryKeyJoinColumn
     private OsobystaInfoVykonavtsia osobystaInfoVykonavtsia;
 
-    @Column(name = "термін початку роботи")
+    @Column
     private Date terminPochatku;
 
-    @Column(name = "термін закінчення роботи")
+    @Column
     private Date terminZakinchennia;
 
-    @Column(name = "фактичний початок роботи")
+    @Column
     private Date factychnyiPochatok;
 
-    @Column(name = "фактичний кынець роботи")
+    @Column
    private Date factychnyiKinec;
 
-    @Column(name = "вартість роботи")
+    @Column
     private Double vartistRoboty;
 
-    @Column(name = "вартість друку")
+    @Column
     private Double vartistDruku;
 
-    @Column(name = "сумарна вартість")
+    @Column
     private Double SumVartist;
 
 
     public Techcard() {
     }
 
-    public Techcard(Long idTechCarty, InfoProVydannia infoProVydannia, VydRoboty vydRoboty, OsobystaInfoVykonavtsia osobystaInfoVykonavtsia, Date terminPochatku, Date terminZakinchennia, Date factychnyiPochatok, Date factychnyiKinec, Double vartistRoboty, Double vartistDruku, Double sumVartist) {
+    public Techcard(Long idTechCarty, InfoProVydannia infoProVydannia, Set<VydRoboty> vydRobotySet, OsobystaInfoVykonavtsia osobystaInfoVykonavtsia, Date terminPochatku, Date terminZakinchennia, Date factychnyiPochatok, Date factychnyiKinec, Double vartistRoboty, Double vartistDruku, Double sumVartist) {
         this.idTechCarty = idTechCarty;
         this.infoProVydannia = infoProVydannia;
-        this.vydRoboty = vydRoboty;
+        this.vydRobotySet = vydRobotySet;
         this.osobystaInfoVykonavtsia = osobystaInfoVykonavtsia;
         this.terminPochatku = terminPochatku;
         this.terminZakinchennia = terminZakinchennia;
@@ -86,12 +86,12 @@ public class Techcard {
         this.infoProVydannia = infoProVydannia;
     }
 
-    public VydRoboty getVydRoboty() {
-        return vydRoboty;
+    public Set<VydRoboty> getVydRoboty() {
+        return vydRobotySet;
     }
 
-    public void setVydRoboty(VydRoboty vydRoboty) {
-        this.vydRoboty = vydRoboty;
+    public void setVydRoboty(Set<VydRoboty> vydRobotySet) {
+        this.vydRobotySet = vydRobotySet;
     }
 
     public OsobystaInfoVykonavtsia getOsobystaInfoVykonavtsia() {

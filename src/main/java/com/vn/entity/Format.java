@@ -5,19 +5,18 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Формати")
+@Table
 public class Format {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id формату", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idFormatu;
 
-    @Column(name = "назва формату")
+    @Column
     private String nazvaFormatu;
 
-    @Column(name = "вартість формату")
+    @Column
     private Double vartistFormatu;
 
     public Format() {

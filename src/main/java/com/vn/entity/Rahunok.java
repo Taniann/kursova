@@ -10,42 +10,43 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "Рахунок")
+@Table
 public class Rahunok {
-//    @Column(name = "id видання")
+
     @OneToOne
+    @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id рахунку", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idRahunku;
 
-//    @Column(name = "id техкартки")
+
     @OneToOne
+    @PrimaryKeyJoinColumn
     private Techcard techcard;
 
-    @Column(name = "дата виписки")
+    @Column
     private Date dataVypysky;
 
-    @Column(name = "всього до сплати")
+    @Column
     private Double vsohoDoSplaty;
 
-    @Column(name = "замовник")
+    @Column
     private String zamovnyk;
 
-    @Column(name = "дата сплати")
+    @Column
     private Date dataSplatyy;
 
-    @Column(name = "платіжне доручення")
+    @Column
     private String platizhneDoruchennia;
 
 
-    @Column(name = "вартість послуг")
+    @Column
     private Double vartistPosluh;
 
-    @Column(name = "вартість матеріалів")
+    @Column
     private Double vartistMaterialiv;
 
     public Rahunok() {

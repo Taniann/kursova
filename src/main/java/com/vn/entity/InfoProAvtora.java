@@ -8,30 +8,29 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Інформація про автора")
+@Table
 public class InfoProAvtora {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id автора", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idAvtora;
 
-    @Column(name = "прізвище")
+    @Column
     private String prizvyshche;
 
-    @Column(name = "ім'я")
+    @Column
     private String imiia;
 
-    @Column(name = "по-батькові")
+    @Column
     private String pobatkovi;
 
-    @Column(name = "адреса")
+    @Column
     private String adresa;
 
-    @Column(name = "телефон")
+    @Column
     private Long telephone;
 
-    @Column(name = "примітки")
+    @Column
     private String prymitky;
 
     public InfoProAvtora() {

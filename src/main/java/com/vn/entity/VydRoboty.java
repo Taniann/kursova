@@ -10,15 +10,14 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Види роботи")
+@Table
 public class VydRoboty {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id виду роботи", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idVydRoboty;
 
-    @Column(name = "назва виду роботи")
+    @Column
     private String nazvaVyduRoboty;
 
     public VydRoboty() {

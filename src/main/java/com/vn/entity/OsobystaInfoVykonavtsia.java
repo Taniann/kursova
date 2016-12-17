@@ -9,41 +9,40 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "Особиста інформація про виконавця")
+@Table
 public class OsobystaInfoVykonavtsia {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id виконавця", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idVykonavcia;
 
-    @Column(name = "Ідентифікаційний код")
+    @Column
     private Long identyfKod;
 
-    @Column(name = "ПІБ")
+    @Column
     private String pib;
 
-    @Column(name = "паспорт")
+    @Column
     private String pasport;
 
-    @Column(name = "адреса")
+    @Column
     private String adresa;
 
-    @Column(name = "телефон")
+    @Column
     private Long telephone;
 
-    @Column(name = "Дата народження")
+    @Column
     private Date dataNarodzhenia;
 
-    @Column(name = "Дата прийому на роботу")
+    @Column
     private Date dataPryiomuNaRobotu;
 
-    @Column(name = "Заробітна плата")
+    @Column
     private Double zarPlata;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id підрозділу", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private Pidrozdil pidrozdil;
 
     public OsobystaInfoVykonavtsia() {

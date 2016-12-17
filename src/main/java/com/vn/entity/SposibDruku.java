@@ -10,16 +10,15 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Способи друку")
+@Table
 public class SposibDruku {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id способу друку", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idSposobuDruku;
 
-    @Column(name = "назва способу друку")
+    @Column
     private String nazvaSposobuDruku;
 
     public SposibDruku() {

@@ -8,52 +8,51 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Інформація про видання")
 public class InfoProVydannia {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id видання", length = 6, nullable = false)
+    @GeneratedValue
+    @Column
     private Long idVydannia;
 
-    @Column(name = "Повна назва видання")
+    @Column
     private String povnaNazva;
 
-    @Column(name = "Коротка назва видання")
+    @Column
     private String korotkaNazva;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id виду видання", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private VydVydannia vydVydannia;
 
-    @Column(name = "кількість сторінок")
+    @Column
     private Integer kilkistStorinok;
 
-//    @Column(name = "id виду обкладинки")
+
     @OneToOne
+    @PrimaryKeyJoinColumn
     private VydObkladynky vydObkladynky;
 
-    @Column(name = "тираж")
+    @Column
     private Long tyrazh;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id формату", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private Format format;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id способу друку", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private SposibDruku sposibDruku;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id автора №1", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private InfoProAvtora infoProAvtora1;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id автора №2", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private InfoProAvtora infoProAvtora2;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id автора №3", nullable = false)
+    @ManyToOne
+    @JoinColumn
     private InfoProAvtora infoProAvtora3;
 
     public InfoProVydannia () {}
