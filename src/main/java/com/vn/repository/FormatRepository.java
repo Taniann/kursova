@@ -5,6 +5,10 @@ package com.vn.repository;
  */
 import com.vn.entity.Format;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface FormatRepository extends JpaRepository<Format, Long> {
+   @Query()
+    Format findById(@Param("idFormatu") long idFormatu);
 }

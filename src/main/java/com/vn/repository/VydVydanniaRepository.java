@@ -5,6 +5,11 @@ package com.vn.repository;
  */
 import com.vn.entity.VydVydannia;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface VydVydanniaRepository extends JpaRepository<VydVydannia, Long> {
+
+    @Query()
+    VydVydannia findById(@Param("idVydVydannia") long idVydVydannia);
 }

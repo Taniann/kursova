@@ -5,6 +5,10 @@ package com.vn.repository;
  */
 import com.vn.entity.Techcard;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface TechcardRepository extends JpaRepository<Techcard, Long> {
+    @Query()
+    Techcard findById(@Param("idTechCarty") long idTechCarty);
 }

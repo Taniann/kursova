@@ -5,6 +5,10 @@ package com.vn.repository;
  */
 import com.vn.entity.Pidrozdil;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface PidrozdilRepository extends JpaRepository<Pidrozdil, Long> {
+    @Query()
+    Pidrozdil findById(@Param("idPidrozdilu") long idPidrozdilu);
 }
