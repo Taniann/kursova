@@ -52,40 +52,40 @@ public class TechcardServiceImpl implements TechcardService {
     }
 
     @Override
-    public List<Techcard> getAllByIdVydannia(InfoProVydannia infoProVydannia) {
-        return techcardRepository.findAllByIdVydannia(infoProVydannia);
+    public List<Techcard> getAllByInfoProVydannia(InfoProVydannia infoProVydannia) {
+        return techcardRepository.findAllByInfoProVydannia(infoProVydannia);
     }
 
     @Override
-    public List<Techcard> getAllByIdVyduRoboty(Set<VydRoboty> vydRobotySet) {
-        return techcardRepository.findAllByIdVyduRoboty(vydRobotySet);
-
-    }
-
-    @Override
-    public List<Techcard> getAllByIdVykonavtsia(OsobystaInfoVykonavtsia osobystaInfoVykonavtsia) {
-        return techcardRepository.findAllByIdVykonavtsia(osobystaInfoVykonavtsia);
+    public List<Techcard> getAllByVydRobotySet(Set<VydRoboty> vydRobotySet) {
+        return techcardRepository.findAllByVydRobotySet(vydRobotySet);
 
     }
 
     @Override
-    public List<Techcard> getDateTerminPochatku(Date terminPochatku) {
+    public List<Techcard> getAllByOsobystaInfoVykonavtsia(OsobystaInfoVykonavtsia osobystaInfoVykonavtsia) {
+        return techcardRepository.findAllByOsobystaInfoVykonavtsia(osobystaInfoVykonavtsia);
+
+    }
+
+    @Override
+    public List<Techcard> getAllTerminPochatku(Date terminPochatku) {
         return techcardRepository.findAllByTerminPochatku(terminPochatku);
 
     }
     @Override
-    public List<Techcard> getDateTerminZakinchennia(Date terminZakinchennia) {
+    public List<Techcard> getAllTerminZakinchennia(Date terminZakinchennia) {
         return techcardRepository.findAllByTerminZakinchennia(terminZakinchennia);
 
     }
 
     @Override
-    public List<Techcard> getDateFactychnyiPochatokBetween(Date factychnyiPochatok1, Date factychnyiPochatok2) {
+    public List<Techcard> getAllFactychnyiPochatokBetween(Date factychnyiPochatok1, Date factychnyiPochatok2) {
         return techcardRepository.findAllByFactychnyiPochatokBetween(factychnyiPochatok1, factychnyiPochatok2);
 
     }
     @Override
-    public List<Techcard> getDateFactychnyiKinecBetween(Date factychnyiKinec1, Date factychnyiKinec2) {
+    public List<Techcard> getAllFactychnyiKinecBetween(Date factychnyiKinec1, Date factychnyiKinec2) {
         return techcardRepository.findAllByFactychnyiKinecBetween(factychnyiKinec1, factychnyiKinec2);
 
     }

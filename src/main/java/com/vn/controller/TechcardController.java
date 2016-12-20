@@ -49,17 +49,17 @@ public class TechcardController {
         return techcardService.getAll();}
 
     @RequestMapping(path = "/idVydannia/{infoProVydannia}")
-    public List<Techcard> getAllByIdVydannia(@PathVariable InfoProVydannia infoProVydannia) {
-        return techcardService.getAllByIdVydannia(infoProVydannia);}
+    public List<Techcard> getAllByInfoProVydannia(@PathVariable InfoProVydannia infoProVydannia) {
+        return techcardService.getAllByInfoProVydannia(infoProVydannia);}
 
     @RequestMapping(path = "/idVyduRoboty/{vydRobotySet}")
-    public List<Techcard> getAllByIdVyduRoboty(@PathVariable Set<VydRoboty> vydRobotySet) {
-        return techcardService.getAllByIdVyduRoboty(vydRobotySet);
+    public List<Techcard> getAllByVydRobotySet(@PathVariable Set<VydRoboty> vydRobotySet) {
+        return techcardService.getAllByVydRobotySet(vydRobotySet);
     }
 
     @RequestMapping(path = "/idVykonavtsia/{osobystaInfoVykonavtsia}")
-    public List<Techcard> getAllByIdVykonavtsia(@PathVariable OsobystaInfoVykonavtsia osobystaInfoVykonavtsia) {
-        return techcardService.getAllByIdVykonavtsia(osobystaInfoVykonavtsia);
+    public List<Techcard> getAllByOsobystaInfoVykonavtsia(@PathVariable OsobystaInfoVykonavtsia osobystaInfoVykonavtsia) {
+        return techcardService.getAllByOsobystaInfoVykonavtsia(osobystaInfoVykonavtsia);
     }
 
 
