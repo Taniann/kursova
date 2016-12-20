@@ -6,9 +6,7 @@ import com.vn.entity.Techcard;
 import com.vn.entity.VydRoboty;
 import com.vn.service.TechcardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Set;
@@ -17,7 +15,7 @@ import java.util.Set;
  * Created by nadezhda on 20.12.16.
  */
 @RestController
-@RequestMapping(path = "/tehkartka")
+@RequestMapping(path = "/tehcards")
 public class TechcardController {
 
     @Autowired
@@ -28,23 +26,23 @@ public class TechcardController {
         return techcardService.getById(id);
     }
 
-    @RequestMapping(path = "/add")
-    public Techcard addTechcard(@PathVariable Techcard techcard) {
+    @RequestMapping(path = "/add", method = RequestMethod.POST)
+    public Techcard addTechcard(@RequestBody Techcard techcard) {
         return techcardService.addTechcard(techcard);
     }
 
-    @RequestMapping("/delete/{idTechCarty}")
+    @RequestMapping(value = "/delete/{idTechCarty}", method = RequestMethod.DELETE)
     public void delete(@PathVariable("idTechCarty") Long idTechCarty) {
 
          techcardService.delete(idTechCarty);
     }
 
-    @RequestMapping(path = "/edit")
-    public Techcard editTechcard(@PathVariable Techcard techcard) {
+    @RequestMapping(path = "/edit", method = RequestMethod.POST)
+    public Techcard editTechcard(@RequestBody Techcard techcard) {
         return techcardService.editTechcard(techcard);
     }
 
-    @RequestMapping(path = "/all")
+    @RequestMapping
     public List<Techcard> getAll() {
         return techcardService.getAll();}
 
