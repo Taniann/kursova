@@ -50,7 +50,7 @@ public class Techcard {
     private Double vartistDruku;
 
     @Column
-    private Double SumVartist;
+    private Double sumVartist;
 
 
     public Techcard() {
@@ -67,7 +67,7 @@ public class Techcard {
         this.factychnyiKinec = factychnyiKinec;
         this.vartistRoboty = vartistRoboty;
         this.vartistDruku = vartistDruku;
-        SumVartist = sumVartist;
+        this.sumVartist = sumVartist;
     }
 
     public Long getIdTechCarty() {
@@ -151,11 +151,11 @@ public class Techcard {
     }
 
     public Double getSumVartist() {
-        return SumVartist;
+        return sumVartist;
     }
 
     public void setSumVartist(Double sumVartist) {
-        SumVartist = sumVartist;
+        this.sumVartist = sumVartist;
     }
 }
 
