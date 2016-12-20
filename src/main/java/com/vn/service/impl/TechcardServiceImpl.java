@@ -21,8 +21,7 @@ import java.util.Set;
 public class TechcardServiceImpl implements TechcardService {
 
     @Autowired
-    //  @Qualifier(value = "TechcardRepository")
-    private TechcardRepository techcardRepository;//!!!!!!
+    private TechcardRepository techcardRepository;
 
     @Override
     public Techcard addTechcard(Techcard techcard) {

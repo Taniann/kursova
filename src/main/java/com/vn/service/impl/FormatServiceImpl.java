@@ -4,12 +4,14 @@ import com.vn.entity.Format;
 import com.vn.repository.FormatRepository;
 import com.vn.service.FormatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class FormatServiceImpl implements FormatService{
 
     @Autowired
@@ -29,6 +31,9 @@ public class FormatServiceImpl implements FormatService{
 
     @Override
     public Format getById(long idFormatu) {return formatRepository.findOne(idFormatu);}
+
+    @Override
+    public Format getByNazvaFormatu(String nazvaFormatu) {return formatRepository.findByNazvaFormatu(nazvaFormatu);}
 
     @Override
     public Format editFormat(Format format) {
