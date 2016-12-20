@@ -29,7 +29,7 @@ public class VydObkladynkyServiceImpl implements VydObkladynkyService {
 
     @Override
     public VydObkladynky getById(long idVydObkladynky) {
-        return vydObkladynkyRepository.findById(idVydObkladynky);
+        return vydObkladynkyRepository.findOne(idVydObkladynky);
     }
 
     @Override

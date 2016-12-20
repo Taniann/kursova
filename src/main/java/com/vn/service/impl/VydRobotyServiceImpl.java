@@ -29,7 +29,7 @@ public class VydRobotyServiceImpl implements VydRobotyService {
 
     @Override
     public VydRoboty getById(long idVydRoboty) {
-        return vydRobotyRepository.findById(idVydRoboty);
+        return vydRobotyRepository.findOne(idVydRoboty);
     }
 
     @Override

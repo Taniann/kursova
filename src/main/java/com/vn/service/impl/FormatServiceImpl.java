@@ -28,9 +28,7 @@ public class FormatServiceImpl implements FormatService{
     }
 
     @Override
-    public Format getById(long idFormatu) {
-        return formatRepository.findById(idFormatu);
-    }
+    public Format getById(long idFormatu) {return formatRepository.findOne(idFormatu);}
 
     @Override
     public Format editFormat(Format format) {

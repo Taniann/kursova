@@ -29,7 +29,7 @@ public class InfoProAvtoraServiceImpl implements InfoProAvtoraService {
 
     @Override
     public InfoProAvtora getById(long idAvtora) {
-        return infoProAvtoraRepository.findById(idAvtora);
+        return infoProAvtoraRepository.findOne(idAvtora);
     }
 
     @Override

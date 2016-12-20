@@ -29,7 +29,7 @@ public class PidrozdilServiceImpl implements PidrozdilService {
 
     @Override
     public Pidrozdil getById(long idPidrozdilu) {
-        return pidrozdilRepository.findById(idPidrozdilu);
+        return pidrozdilRepository.findOne(idPidrozdilu);
     }
 
     @Override

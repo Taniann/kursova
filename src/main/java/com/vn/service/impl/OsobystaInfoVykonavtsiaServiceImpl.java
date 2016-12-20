@@ -29,7 +29,7 @@ public class OsobystaInfoVykonavtsiaServiceImpl implements OsobystaInfoVykonavts
 
     @Override
     public OsobystaInfoVykonavtsia getById(long idVykonavcia) {
-        return osobystaInfoVykonavtsiaRepository.findById(idVykonavcia);
+        return osobystaInfoVykonavtsiaRepository.findOne(idVykonavcia);
     }
 
     @Override

@@ -29,7 +29,7 @@ public class SposibDrukuServiceImpl implements SposibDrukuService {
 
     @Override
     public SposibDruku getById(long idSposobuDruku) {
-        return sposibDrukuRepository.findById(idSposobuDruku);
+        return sposibDrukuRepository.findOne(idSposobuDruku);
     }
 
     @Override

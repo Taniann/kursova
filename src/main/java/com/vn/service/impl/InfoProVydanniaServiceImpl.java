@@ -29,7 +29,7 @@ public class InfoProVydanniaServiceImpl implements InfoProVydanniaService {
 
     @Override
     public InfoProVydannia getById(long idVydannia) {
-        return infoProVydanniaRepository.findById(idVydannia);
+        return infoProVydanniaRepository.findOne(idVydannia);
     }
 
     @Override

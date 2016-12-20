@@ -29,7 +29,7 @@ public class VydVydanniaServiceImpl implements VydVydanniaService {
 
     @Override
     public VydVydannia getById(long idVydVydannia) {
-        return vydVydanniaRepository.findById(idVydVydannia);
+        return vydVydanniaRepository.findOne(idVydVydannia);
     }
 
     @Override

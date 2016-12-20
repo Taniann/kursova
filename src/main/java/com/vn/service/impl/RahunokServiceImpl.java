@@ -29,7 +29,7 @@ public class RahunokServiceImpl implements RahunokService {
 
     @Override
     public Rahunok getById(long idRahunok) {
-        return rahunokRepository.findById(idRahunok);
+        return rahunokRepository.findOne(idRahunok);
     }
 
     @Override
