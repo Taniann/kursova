@@ -11,6 +11,7 @@ public interface PidrozdilService {
     Pidrozdil addPidrozdil(Pidrozdil pidrozdil);
     void delete(long idPidrozdilu);
     Pidrozdil getById(long idPidrozdilu);
+    Pidrozdil getByNazvaPidrozdilu (String nazvaPidrozdilu);
     Pidrozdil editPidrozdil(Pidrozdil pidrozdil);
     List<Pidrozdil> getAll();
 }

@@ -4,12 +4,14 @@ import com.vn.entity.Pidrozdil;
 import com.vn.repository.PidrozdilRepository;
 import com.vn.service.PidrozdilService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class PidrozdilServiceImpl implements PidrozdilService {
 
     @Autowired
@@ -30,6 +32,11 @@ public class PidrozdilServiceImpl implements PidrozdilService {
     @Override
     public Pidrozdil getById(long idPidrozdilu) {
         return pidrozdilRepository.findOne(idPidrozdilu);
+    }
+
+    @Override
+    public Pidrozdil getByNazvaPidrozdilu(String nazvaPidrozdilu) {
+        return pidrozdilRepository.findByNazvaPidrozdilu(nazvaPidrozdilu);
     }
 
     @Override
