@@ -81,7 +81,7 @@ public class TechcardController {
         return techcardService.getAllFactychnyiKinecBetween(factychnyiKinec1, factychnyiKinec2);
     }
 
-    @RequestMapping(path = "/{terminZakinchennia}")
+    @RequestMapping(path = "/{vartistRoboty}")
     public List<Techcard> getAllByVartistRoboty(@PathVariable Double vartistRoboty ) {
         return techcardService.getAllByVartistRoboty(vartistRoboty);
     }
@@ -91,7 +91,7 @@ public class TechcardController {
         return techcardService.getAllByVartistDruku(vartistDruku);
     }
 
-    @RequestMapping(path = "/{terminZakinchennia}")
+    @RequestMapping(path = "/{sumVartist}")
     public List<Techcard> getAllBySumVartist(@PathVariable Double sumVartist ) {
         return techcardService.getAllBySumVartist(sumVartist);
     }
