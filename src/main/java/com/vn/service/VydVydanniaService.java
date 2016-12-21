@@ -11,6 +11,7 @@ public interface VydVydanniaService {
     VydVydannia addVydVydannia(VydVydannia vydVydannia);
     void delete(long idVydVydannia);
     VydVydannia getById(long idVydVydannia);
+    VydVydannia getAllByNazvaVyduVydannia( String nazvaVyduVydannia);
     VydVydannia editVydVydannia(VydVydannia vydVydannia);
     List<VydVydannia> getAll();
 }

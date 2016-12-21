@@ -41,7 +41,7 @@ public class OsobystaInfoVykonavtsia {
     @Column
     private Double zarPlata;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Pidrozdil pidrozdil;
 

@@ -12,6 +12,7 @@ public interface SposibDrukuService {
     SposibDruku addSposibDruku(SposibDruku sposibDruku);
     void delete(long idSposobuDruku);
     SposibDruku getById(long idSposobuDruku);
+    SposibDruku getAllByNazvaSposobuDruku( String nazvaSposobuDruku);
     SposibDruku editSposibDruku(SposibDruku sposibDruku);
     List<SposibDruku> getAll();
 }

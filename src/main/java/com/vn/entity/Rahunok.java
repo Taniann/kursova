@@ -13,7 +13,7 @@ import java.util.Date;
 @Table
 public class Rahunok {
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
@@ -23,7 +23,7 @@ public class Rahunok {
     private Long idRahunku;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Techcard techcard;
 

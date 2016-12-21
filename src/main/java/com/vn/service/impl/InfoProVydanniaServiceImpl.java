@@ -4,12 +4,14 @@ import com.vn.entity.InfoProVydannia;
 import com.vn.repository.InfoProVydanniaRepository;
 import com.vn.service.InfoProVydanniaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class InfoProVydanniaServiceImpl implements InfoProVydanniaService {
 
     @Autowired

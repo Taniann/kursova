@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VydObkladynkyRepository extends JpaRepository<VydObkladynky, Long> {
-    VydObkladynky findByNazvaVyduObkladynky( String nazvaVyduObkladynky);
+    VydObkladynky findAllByNazvaVyduObkladynky( String nazvaVyduObkladynky);
 }

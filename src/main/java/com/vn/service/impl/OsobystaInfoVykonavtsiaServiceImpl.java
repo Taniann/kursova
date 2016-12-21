@@ -4,12 +4,14 @@ import com.vn.entity.OsobystaInfoVykonavtsia;
 import com.vn.repository.OsobystaInfoVykonavtsiaRepository;
 import com.vn.service.OsobystaInfoVykonavtsiaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class OsobystaInfoVykonavtsiaServiceImpl implements OsobystaInfoVykonavtsiaService {
 
     @Autowired

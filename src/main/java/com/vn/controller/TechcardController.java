@@ -4,6 +4,7 @@ import com.vn.entity.InfoProVydannia;
 import com.vn.entity.OsobystaInfoVykonavtsia;
 import com.vn.entity.Techcard;
 import com.vn.entity.VydRoboty;
+import com.vn.service.InfoProVydanniaService;
 import com.vn.service.TechcardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +17,14 @@ import java.util.Set;
  * Created by nadezhda on 20.12.16.
  */
 @RestController
-@RequestMapping(path = "/tehcards")
+@RequestMapping(path = "/techcards")
 public class TechcardController {
 
     @Autowired
     private TechcardService techcardService;
+    @Autowired
+    private InfoProVydanniaService infoProVydanniaService;
+
 
     @RequestMapping(path = "/{id}")
     public Techcard getById(@PathVariable long id) {
@@ -47,9 +51,10 @@ public class TechcardController {
     public List<Techcard> getAll() {
         return techcardService.getAll();}
 
-    @RequestMapping(path = "/idVydannia/{infoProVydannia}")
-    public List<Techcard> getAllByInfoProVydannia(@PathVariable InfoProVydannia infoProVydannia) {
-        return techcardService.getAllByInfoProVydannia(infoProVydannia);}
+    @RequestMapping(path = "/idVydannia/{idVydannia}")
+    public List<Techcard> getAllByInfoProVydannia(@PathVariable long idVydannia) {
+        return techcardService.getAllByInfoProVydannia(infoProVydanniaService.getById(idVydannia));
+    }
 
     @RequestMapping(path = "/idVyduRoboty/{vydRobotySet}")
     public List<Techcard> getAllByVydRobotySet(@PathVariable Set<VydRoboty> vydRobotySet) {

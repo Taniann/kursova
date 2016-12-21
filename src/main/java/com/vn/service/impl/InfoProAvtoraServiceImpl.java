@@ -4,12 +4,14 @@ import com.vn.entity.InfoProAvtora;
 import com.vn.repository.InfoProAvtoraRepository;
 import com.vn.service.InfoProAvtoraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class InfoProAvtoraServiceImpl implements InfoProAvtoraService {
 
     @Autowired

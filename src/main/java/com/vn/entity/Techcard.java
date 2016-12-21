@@ -4,6 +4,8 @@ package com.vn.entity;
  * Created by Таня on 12.12.2016.
  */
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -19,15 +21,15 @@ public class Techcard {
     @Column
     private Long idTechCarty;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
     private Set<VydRoboty> vydRobotySet; //one to many
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private OsobystaInfoVykonavtsia osobystaInfoVykonavtsia;
 

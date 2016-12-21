@@ -20,7 +20,7 @@ public class InfoProVydannia {
     @Column
     private String korotkaNazva;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private VydVydannia vydVydannia;
 
@@ -28,14 +28,14 @@ public class InfoProVydannia {
     private Integer kilkistStorinok;
 
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn
     private VydObkladynky vydObkladynky;
 
     @Column
     private Long tyrazh;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Format format;
 
@@ -43,7 +43,7 @@ public class InfoProVydannia {
     @JoinColumn
     private SposibDruku sposibDruku;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private InfoProAvtora infoProAvtora1;
 
@@ -51,7 +51,7 @@ public class InfoProVydannia {
     @JoinColumn
     private InfoProAvtora infoProAvtora2;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private InfoProAvtora infoProAvtora3;
 

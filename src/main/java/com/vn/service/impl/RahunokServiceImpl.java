@@ -4,12 +4,14 @@ import com.vn.entity.Rahunok;
 import com.vn.repository.RahunokRepository;
 import com.vn.service.RahunokService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class RahunokServiceImpl implements RahunokService {
 
     @Autowired

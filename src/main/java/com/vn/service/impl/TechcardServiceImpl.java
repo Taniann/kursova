@@ -25,7 +25,7 @@ public class TechcardServiceImpl implements TechcardService {
 
     @Override
     public Techcard addTechcard(Techcard techcard) {
-        Techcard savedTechcard = techcardRepository.saveAndFlush(techcard);
+        Techcard savedTechcard = techcardRepository.save(techcard);
 
         return savedTechcard;
     }

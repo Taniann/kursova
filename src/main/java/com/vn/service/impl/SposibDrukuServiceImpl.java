@@ -4,12 +4,14 @@ import com.vn.entity.SposibDruku;
 import com.vn.repository.SposibDrukuRepository;
 import com.vn.service.SposibDrukuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Таня on 19.12.2016.
  */
+@Service
 public class SposibDrukuServiceImpl implements SposibDrukuService {
 
     @Autowired
@@ -31,6 +33,9 @@ public class SposibDrukuServiceImpl implements SposibDrukuService {
     public SposibDruku getById(long idSposobuDruku) {
         return sposibDrukuRepository.findOne(idSposobuDruku);
     }
+
+    @Override
+    public SposibDruku getAllByNazvaSposobuDruku( String nazvaSposobuDruku){ return sposibDrukuRepository.findAllByNazvaSposobuDruku(nazvaSposobuDruku);}
 
     @Override
     public SposibDruku editSposibDruku(SposibDruku sposibDruku) {
