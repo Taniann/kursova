@@ -3,7 +3,9 @@ package com.vn.controller;
 import com.vn.entity.InfoProAvtora;
 import com.vn.entity.InfoProVydannia;
 import com.vn.entity.VydVydannia;
+import com.vn.service.InfoProAvtoraService;
 import com.vn.service.InfoProVydanniaService;
+import com.vn.service.VydVydanniaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +19,12 @@ import java.util.List;
 public class InfoProVydanniaController {
     @Autowired
     private InfoProVydanniaService infoProVydanniaService;
+
+    @Autowired
+    private VydVydanniaService vydVydanniaService;
+
+    @Autowired
+    private InfoProAvtoraService infoProAvtoraService;
 
     @RequestMapping(path = "/{idVydannia}")
     public InfoProVydannia getById(@PathVariable long idVydannia) {
@@ -51,19 +59,23 @@ public class InfoProVydanniaController {
     public List<InfoProVydannia> getAllByKorotkaNazva(@PathVariable String korotkaNazva) {
         return infoProVydanniaService.getAllByKorotkaNazva(korotkaNazva);}
 
-    @RequestMapping(path = "/{vydVydannia}")
-    public List<InfoProVydannia> getAllByVydVydannia(@PathVariable VydVydannia vydVydannia) {
-        return infoProVydanniaService.getAllByVydVydannia(vydVydannia);}
+    @RequestMapping(path = "/idVyduVydannia/{idVyduVydannia}")
+    public List<InfoProVydannia> getAllByVydVydannia(@PathVariable long idVyduVydannia) {
+        return infoProVydanniaService.getAllByVydVydannia(vydVydanniaService.getById(idVyduVydannia));
+    }
 
-    @RequestMapping(path = "/{infoProAvtora1}")
-    public List<InfoProVydannia> getAllByInfoProAvtora1(@PathVariable InfoProAvtora infoProAvtora1) {
-        return infoProVydanniaService.getAllByInfoProAvtora1(infoProAvtora1);}
+    @RequestMapping(path = "idAvtora1/{idAvtora1}")
+    public List<InfoProVydannia> getAllByInfoProAvtora1(@PathVariable Long idAvtora) {
+        return infoProVydanniaService.getAllByInfoProAvtora1(infoProAvtoraService.getById(idAvtora));
+    }
 
-    @RequestMapping(path = "/{infoProAvtora2}")
-    public List<InfoProVydannia> getAllByInfoProAvtora2(@PathVariable InfoProAvtora infoProAvtora2) {
-        return infoProVydanniaService.getAllByInfoProAvtora2(infoProAvtora2);}
+    @RequestMapping(path = "idAvtora2/{idAvtora2}")
+    public List<InfoProVydannia> getAllByInfoProAvtora2(@PathVariable Long idAvtora) {
+        return infoProVydanniaService.getAllByInfoProAvtora2(infoProAvtoraService.getById(idAvtora));
+    }
 
-    @RequestMapping(path = "/{infoProAvtora3}")
-    public List<InfoProVydannia> getAllByInfoProAvtora3(@PathVariable InfoProAvtora infoProAvtora3) {
-        return infoProVydanniaService.getAllByInfoProAvtora3(infoProAvtora3);}
+    @RequestMapping(path = "idAvtora3/{idAvtora3}")
+    public List<InfoProVydannia> getAllByInfoProAvtora3(@PathVariable Long idAvtora) {
+        return infoProVydanniaService.getAllByInfoProAvtora3(infoProAvtoraService.getById(idAvtora));
+    }
 }

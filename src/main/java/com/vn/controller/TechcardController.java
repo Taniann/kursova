@@ -56,47 +56,47 @@ public class TechcardController {
         return techcardService.getAllByInfoProVydannia(infoProVydanniaService.getById(idVydannia));
     }
 
-    @RequestMapping(path = "/idVyduRoboty/{vydRobotySet}")
+    @RequestMapping(path = "/idVyduRoboty/{idVyduRoboty}")
     public List<Techcard> getAllByVydRobotySet(@PathVariable Set<VydRoboty> vydRobotySet) {
         return techcardService.getAllByVydRobotySet(vydRobotySet);
     }
 
-    @RequestMapping(path = "/idVykonavtsia/{osobystaInfoVykonavtsia}")
+    @RequestMapping(path = "/idVykonavtsia/{idVykonavtsia}")
     public List<Techcard> getAllByOsobystaInfoVykonavtsia(@PathVariable OsobystaInfoVykonavtsia osobystaInfoVykonavtsia) {
         return techcardService.getAllByOsobystaInfoVykonavtsia(osobystaInfoVykonavtsia);
     }
 
-    @RequestMapping(path = "/ cv    b {terminPochatku}")
+    @RequestMapping(path = "/terminPochatku/{terminPochatku}")
     public List<Techcard> getAllTerminPochatku(@PathVariable Date terminPochatku ) {
         return techcardService.getAllTerminPochatku(terminPochatku);
     }
 
-    @RequestMapping(path = "/{terminZakinchennia}")
+    @RequestMapping(path = "/terminZakinchennia/{terminZakinchennia}")
     public List<Techcard> getAllTerminZakinchennia(@PathVariable Date terminZakinchennia ) {
         return techcardService.getAllTerminZakinchennia(terminZakinchennia);
     }
 
-    @RequestMapping(path = "/{factychnyiPochatok1,factychnyiPochatok2 }")
+    @RequestMapping(path = "/factychnyiPochatok1,factychnyiPochatok2/{factychnyiPochatok1,factychnyiPochatok2 }")
     public List<Techcard> getAllFactychnyiPochatokBetween(@PathVariable Date factychnyiPochatok1, @PathVariable Date factychnyiPochatok2 ) {
         return techcardService.getAllFactychnyiPochatokBetween(factychnyiPochatok1,factychnyiPochatok2);
     }
 
-    @RequestMapping(path = "/{factychnyiKinec1,factychnyiKinec2 }")
+    @RequestMapping(path = "/factychnyiKinec1,factychnyiKinec2/{factychnyiKinec1,factychnyiKinec2}")
     public List<Techcard> getAllFactychnyiKinecBetween(@PathVariable Date factychnyiKinec1, @PathVariable Date factychnyiKinec2 ) {
         return techcardService.getAllFactychnyiKinecBetween(factychnyiKinec1, factychnyiKinec2);
     }
 
-    @RequestMapping(path = "/{vartistRoboty}")
+    @RequestMapping(path = "/vartistRoboty/{vartistRoboty}")
     public List<Techcard> getAllByVartistRoboty(@PathVariable Double vartistRoboty ) {
         return techcardService.getAllByVartistRoboty(vartistRoboty);
     }
 
-    @RequestMapping(path = "/{vartistDruku}")
+    @RequestMapping(path = "/vartistDruku/{vartistDruku}")
     public List<Techcard> getAllByVartistDruku(@PathVariable Double vartistDruku ) {
         return techcardService.getAllByVartistDruku(vartistDruku);
     }
 
-    @RequestMapping(path = "/{sumVartist}")
+    @RequestMapping(path = "/sumVartist/{sumVartist}")
     public List<Techcard> getAllBySumVartist(@PathVariable Double sumVartist ) {
         return techcardService.getAllBySumVartist(sumVartist);
     }

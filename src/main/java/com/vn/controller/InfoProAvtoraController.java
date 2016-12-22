@@ -42,11 +42,11 @@ public class InfoProAvtoraController {
     public List<InfoProAvtora> getAll() {
         return infoProAvtoraService.getAll();}
 
-    @RequestMapping(path = "/{prizvyshche}")
+    @RequestMapping(path = "prizvyshche/{prizvyshche}")
     public List<InfoProAvtora> getAllByPrizvyshche(@PathVariable String prizvyshche) {
         return infoProAvtoraService.getAllByPrizvyshche(prizvyshche);}
 
-    @RequestMapping(path = "/{imiia}")
+    @RequestMapping(path = "/imiia/{imiia}")
     public List<InfoProAvtora> getAllByImiia(@PathVariable String imiia) {
         return infoProAvtoraService.getAllByImiia(imiia);}
 }

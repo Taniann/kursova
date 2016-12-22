@@ -42,7 +42,7 @@ private PidrozdilService pidrozdilService;
     public List<Pidrozdil> getAll() {
         return pidrozdilService.getAll();}
 
-    @RequestMapping(path = "/{nazvaFormatu}")
+    @RequestMapping(path = "/nazvaFormatu/{nazvaFormatu}")
     public Pidrozdil getByNazvaPidrozdilu(@PathVariable String nazvaPidrozdilu) {
         return pidrozdilService.getByNazvaPidrozdilu(nazvaPidrozdilu);}
 }

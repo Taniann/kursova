@@ -46,7 +46,7 @@ public class OsobystaInfoVykonavtsiaController {
     public List<OsobystaInfoVykonavtsia> getAll() {
         return osobystaInfoVykonavtsiaService.getAll();}
 
-    @RequestMapping(path = "/{identyfKod}")
+    @RequestMapping(path = "/identyfKod/{identyfKod}")
     public List<OsobystaInfoVykonavtsia> getAllByIdentyfKod(@PathVariable long identyfKod) {
         return osobystaInfoVykonavtsiaService.getAllByIdentyfKod(identyfKod);}
 
@@ -54,12 +54,12 @@ public class OsobystaInfoVykonavtsiaController {
     public List<OsobystaInfoVykonavtsia> getAllByPib(@PathVariable String pib) {
         return osobystaInfoVykonavtsiaService.getAllByPib(pib);}
 
-    @RequestMapping(path = "/{vydVydannia}")
+    @RequestMapping(path = "/vydVydannia/{vydVydannia}")
     public List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(@PathVariable Date dataPryiomuNaRobotu1,
                                                                     @PathVariable Date dataPryiomuNaRobotu2) {
         return osobystaInfoVykonavtsiaService.getAllByDataPryiomuNaRobotuBetween(dataPryiomuNaRobotu1, dataPryiomuNaRobotu2);}
 
-    @RequestMapping(path = "/{idPidrozdilu}")
+    @RequestMapping(path = "/idPidrozdilu/{idPidrozdilu}")
     public List<OsobystaInfoVykonavtsia> getAllByPidrozdil(@PathVariable long idPidrozdilu) {
         return osobystaInfoVykonavtsiaService.getAllByPidrozdil(pidrozdilService.getById(idPidrozdilu));
     }
