@@ -11,7 +11,7 @@ public interface FormatService {
     Format addFormat(Format format);
     void delete(long idFormatu);
     Format getById(long idFormatu);
-    Format getByNazvaFormatu(String nazvaFormatu);
+    List<Format> getAllByNazvaFormatu(String nazvaFormatu);
     Format editFormat(Format format);
     List<Format> getAll();
 }

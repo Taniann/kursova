@@ -11,6 +11,8 @@ public interface InfoProAvtoraService {
     InfoProAvtora addInfoProAvtora(InfoProAvtora infoProAvtora);
     void delete(long idAvtora);
     InfoProAvtora getById(long idAvtora);
+    List<InfoProAvtora> getAllByPrizvyshche(String prizvyshche);
+    List<InfoProAvtora> getAllByImiia(String imiia);
     InfoProAvtora editInfoProAvtora(InfoProAvtora infoProAvtora);
     List<InfoProAvtora> getAll();
 }

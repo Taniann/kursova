@@ -19,9 +19,9 @@ public class FormatController {
     @Autowired
     private FormatService formatService;
 
-    @RequestMapping(path = "/{id}")
-    public Format getById(@PathVariable long id) {
-        return formatService.getById(id);
+    @RequestMapping(path = "/{idFormatu}")
+    public Format getById(@PathVariable long idFormatu) {
+        return formatService.getById(idFormatu);
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
@@ -45,6 +45,6 @@ public class FormatController {
         return formatService.getAll();}
 
     @RequestMapping(path = "/{nazvaFormatu}")
-    public Format getByNazvaFormatu(@PathVariable String nazvaFormatu) {
-        return formatService.getByNazvaFormatu(nazvaFormatu);}
+    public List<Format> getAllByNazvaFormatu(@PathVariable String nazvaFormatu) {
+        return formatService.getAllByNazvaFormatu(nazvaFormatu);}
 }

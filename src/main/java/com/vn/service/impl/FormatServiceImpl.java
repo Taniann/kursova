@@ -33,7 +33,7 @@ public class FormatServiceImpl implements FormatService{
     public Format getById(long idFormatu) {return formatRepository.findOne(idFormatu);}
 
     @Override
-    public Format getByNazvaFormatu(String nazvaFormatu) {return formatRepository.findByNazvaFormatu(nazvaFormatu);}
+    public List<Format> getAllByNazvaFormatu(String nazvaFormatu) {return formatRepository.findAllByNazvaFormatu(nazvaFormatu);}
 
     @Override
     public Format editFormat(Format format) {

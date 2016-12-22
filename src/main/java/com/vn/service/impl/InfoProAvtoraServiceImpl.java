@@ -35,6 +35,16 @@ public class InfoProAvtoraServiceImpl implements InfoProAvtoraService {
     }
 
     @Override
+    public List<InfoProAvtora> getAllByPrizvyshche(String prizvyshche) {
+        return infoProAvtoraRepository.findAllByPrizvyshche(prizvyshche);
+    }
+
+    @Override
+    public List<InfoProAvtora> getAllByImiia(String imiia) {
+        return infoProAvtoraRepository.findAllByImiia(imiia);
+    }
+
+    @Override
     public InfoProAvtora editInfoProAvtora(InfoProAvtora infoProAvtora) {
         return infoProAvtoraRepository.saveAndFlush(infoProAvtora);
     }

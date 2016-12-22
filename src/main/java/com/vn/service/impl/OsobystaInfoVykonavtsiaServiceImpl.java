@@ -1,11 +1,13 @@
 package com.vn.service.impl;
 
 import com.vn.entity.OsobystaInfoVykonavtsia;
+import com.vn.entity.Pidrozdil;
 import com.vn.repository.OsobystaInfoVykonavtsiaRepository;
 import com.vn.service.OsobystaInfoVykonavtsiaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,10 +37,26 @@ public class OsobystaInfoVykonavtsiaServiceImpl implements OsobystaInfoVykonavts
     }
 
     @Override
+    public List<OsobystaInfoVykonavtsia> getAllByIdentyfKod(long identyfKod) {
+        return osobystaInfoVykonavtsiaRepository.findAllByIdentyfKod(identyfKod);
+    }
+    @Override
+    public List<OsobystaInfoVykonavtsia> getAllByPib(String pib) {
+        return osobystaInfoVykonavtsiaRepository.findAllByPib(pib);
+    }
+    @Override
+    public List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(Date dataPryiomuNaRobotu1, Date dataPryiomuNaRobotu2) {
+        return osobystaInfoVykonavtsiaRepository.findAllByDataPryiomuNaRobotuBetween(dataPryiomuNaRobotu1, dataPryiomuNaRobotu2);
+    }
+    @Override
+    public List<OsobystaInfoVykonavtsia> getAllByPidrozdil(Pidrozdil pidrozdil) {
+        return osobystaInfoVykonavtsiaRepository.findAllByPidrozdil(pidrozdil);
+    }
+
+    @Override
     public OsobystaInfoVykonavtsia editOsobystaInfoVykonavtsia(OsobystaInfoVykonavtsia osobystaInfoVykonavtsia) {
         return osobystaInfoVykonavtsiaRepository.saveAndFlush(osobystaInfoVykonavtsia);
     }
-
     @Override
     public List<OsobystaInfoVykonavtsia> getAll() {
         return osobystaInfoVykonavtsiaRepository.findAll();
