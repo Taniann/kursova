@@ -4,6 +4,7 @@ import com.vn.entity.OsobystaInfoVykonavtsia;
 import com.vn.service.OsobystaInfoVykonavtsiaService;
 import com.vn.service.PidrozdilService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -55,8 +56,8 @@ public class OsobystaInfoVykonavtsiaController {
         return osobystaInfoVykonavtsiaService.getAllByPib(pib);}
 
     @RequestMapping(path = "/vydVydannia/{vydVydannia}")
-    public List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(@PathVariable Date dataPryiomuNaRobotu1,
-                                                                    @PathVariable Date dataPryiomuNaRobotu2) {
+    public List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date dataPryiomuNaRobotu1,
+                                                                    @PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date dataPryiomuNaRobotu2) {
         return osobystaInfoVykonavtsiaService.getAllByDataPryiomuNaRobotuBetween(dataPryiomuNaRobotu1, dataPryiomuNaRobotu2);}
 
     @RequestMapping(path = "/idPidrozdilu/{idPidrozdilu}")

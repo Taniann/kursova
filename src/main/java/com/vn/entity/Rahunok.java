@@ -52,14 +52,14 @@ public class Rahunok {
     public Rahunok() {
     }
 
-    public Rahunok(InfoProVydannia infoProVydannia, Long idRahunku, Techcard techcard, Date dataVypysky, Double vsohoDoSplaty, String zamovnyk, Date dataSplatyy, String platizhneDoruchennia, Double vartistPosluh, Double vartistMaterialiv) {
+    public Rahunok(InfoProVydannia infoProVydannia, Long idRahunku, Techcard techcard, Date dataVypysky, Double vsohoDoSplaty, String zamovnyk, Date dataSplaty, String platizhneDoruchennia, Double vartistPosluh, Double vartistMaterialiv) {
         this.infoProVydannia = infoProVydannia;
         this.idRahunku = idRahunku;
         this.techcard = techcard;
         this.dataVypysky = dataVypysky;
         this.vsohoDoSplaty = vsohoDoSplaty;
         this.zamovnyk = zamovnyk;
-        this.dataSplaty = dataSplatyy;
+        this.dataSplaty = dataSplaty;
         this.platizhneDoruchennia = platizhneDoruchennia;
         this.vartistPosluh = vartistPosluh;
         this.vartistMaterialiv = vartistMaterialiv;

@@ -7,6 +7,7 @@ import com.vn.entity.VydRoboty;
 import com.vn.service.InfoProVydanniaService;
 import com.vn.service.TechcardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -67,22 +68,22 @@ public class TechcardController {
     }
 
     @RequestMapping(path = "/terminPochatku/{terminPochatku}")
-    public List<Techcard> getAllTerminPochatku(@PathVariable Date terminPochatku ) {
+    public List<Techcard> getAllTerminPochatku(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date terminPochatku ) {
         return techcardService.getAllTerminPochatku(terminPochatku);
     }
 
     @RequestMapping(path = "/terminZakinchennia/{terminZakinchennia}")
-    public List<Techcard> getAllTerminZakinchennia(@PathVariable Date terminZakinchennia ) {
+    public List<Techcard> getAllTerminZakinchennia(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date terminZakinchennia ) {
         return techcardService.getAllTerminZakinchennia(terminZakinchennia);
     }
 
     @RequestMapping(path = "/factychnyiPochatok1,factychnyiPochatok2/{factychnyiPochatok1,factychnyiPochatok2 }")
-    public List<Techcard> getAllFactychnyiPochatokBetween(@PathVariable Date factychnyiPochatok1, @PathVariable Date factychnyiPochatok2 ) {
+    public List<Techcard> getAllFactychnyiPochatokBetween(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date factychnyiPochatok1, @PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date factychnyiPochatok2 ) {
         return techcardService.getAllFactychnyiPochatokBetween(factychnyiPochatok1,factychnyiPochatok2);
     }
 
     @RequestMapping(path = "/factychnyiKinec1,factychnyiKinec2/{factychnyiKinec1,factychnyiKinec2}")
-    public List<Techcard> getAllFactychnyiKinecBetween(@PathVariable Date factychnyiKinec1, @PathVariable Date factychnyiKinec2 ) {
+    public List<Techcard> getAllFactychnyiKinecBetween(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date factychnyiKinec1, @PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date factychnyiKinec2 ) {
         return techcardService.getAllFactychnyiKinecBetween(factychnyiKinec1, factychnyiKinec2);
     }
 
