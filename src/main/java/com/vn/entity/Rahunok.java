@@ -37,7 +37,7 @@ public class Rahunok {
     private String zamovnyk;
 
     @Column
-    private Date dataSplatyy;
+    private Date dataSplaty;
 
     @Column
     private String platizhneDoruchennia;
@@ -59,7 +59,7 @@ public class Rahunok {
         this.dataVypysky = dataVypysky;
         this.vsohoDoSplaty = vsohoDoSplaty;
         this.zamovnyk = zamovnyk;
-        this.dataSplatyy = dataSplatyy;
+        this.dataSplaty = dataSplatyy;
         this.platizhneDoruchennia = platizhneDoruchennia;
         this.vartistPosluh = vartistPosluh;
         this.vartistMaterialiv = vartistMaterialiv;
@@ -114,11 +114,11 @@ public class Rahunok {
     }
 
     public Date getDataSplatyy() {
-        return dataSplatyy;
+        return dataSplaty;
     }
 
     public void setDataSplatyy(Date dataSplatyy) {
-        this.dataSplatyy = dataSplatyy;
+        this.dataSplaty = dataSplatyy;
     }
 
     public String getPlatizhneDoruchennia() {

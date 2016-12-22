@@ -66,7 +66,7 @@ public class TechcardController {
         return techcardService.getAllByOsobystaInfoVykonavtsia(osobystaInfoVykonavtsia);
     }
 
-    @RequestMapping(path = "/{terminPochatku}")
+    @RequestMapping(path = "/ cv    b {terminPochatku}")
     public List<Techcard> getAllTerminPochatku(@PathVariable Date terminPochatku ) {
         return techcardService.getAllTerminPochatku(terminPochatku);
     }
