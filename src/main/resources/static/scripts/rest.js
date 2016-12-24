@@ -280,3 +280,261 @@ function getAllVydVydannia( successFunc) {
         error: errorFunc
     } );
 }
+
+//////////////
+///Format///
+//////////////
+function getFormatById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/formaty/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addFormat(format) {
+    jQuery.ajax({
+        url: hostName + '/formaty/add',
+        type: 'Post',
+        data: format,
+        success: console.log("addFormat successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteFormat(id) {
+    jQuery.ajax({
+        url: hostName + '/formaty/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteFormat successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editFormat(format) {
+    jQuery.ajax({
+        url: hostName + '/formaty/edit',
+        type: 'Post',
+        data: format,
+        success: console.log("editFormat successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllFormat( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/formaty',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+//////////////
+///InfoProAvtora///
+//////////////
+function getInfoProAvtoraById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProAvtora/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addInfoProAvtora(infoProAvtora) {
+    jQuery.ajax({
+        url: hostName + '/infoProAvtora/add',
+        type: 'Post',
+        data: infoProAvtora,
+        success: console.log("addInfoProAvtora successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteInfoProAvtora(id) {
+    jQuery.ajax({
+        url: hostName + '/infoProAvtora/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteInfoProAvtora successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editInfoProAvtora(infoProAvtora) {
+    jQuery.ajax({
+        url: hostName + '/infoProAvtora/edit',
+        type: 'Post',
+        data: infoProAvtora,
+        success: console.log("editInfoProAvtora successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllInfoProAvtora( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProAvtora',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+//////////////
+///InfoProVydannia///
+//////////////
+
+function getInfoProVydanniaById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProVydannia/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addInfoProVydannia(infoProVydannia) {
+    jQuery.ajax({
+        url: hostName + '/infoProVydannia/add',
+        type: 'Post',
+        data: infoProVydannia,
+        success: console.log("addInfoProVydannia successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteInfoProVydannia(id) {
+    jQuery.ajax({
+        url: hostName + '/infoProVydannia/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteInfoProVydannia successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editInfoProVydannia(infoProVydannia) {
+    jQuery.ajax({
+        url: hostName + '/infoProVydannia/edit',
+        type: 'Post',
+        data: infoProVydannia,
+        success: console.log("editInfoProVydannia successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllInfoProVydannia( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProVydannia',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+//////////////
+///OsobystaInfoVykonavtsia///
+//////////////
+
+function getOsobystaInfoVykonavtsiaById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/osobystaInfoVykonavtsia/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addOsobystaInfoVykonavtsia(osobystaInfoVykonavtsia) {
+    jQuery.ajax({
+        url: hostName + '/osobystaInfoVykonavtsia/add',
+        type: 'Post',
+        data: osobystaInfoVykonavtsia,
+        success: console.log("addOsobystaInfoVykonavtsia successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteOsobystaInfoVykonavtsia(id) {
+    jQuery.ajax({
+        url: hostName + '/osobystaInfoVykonavtsia/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteOsobystaInfoVykonavtsia successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editOsobystaInfoVykonavtsia(infoProAvtora) {
+    jQuery.ajax({
+        url: hostName + '/osobystaInfoVykonavtsia/edit',
+        type: 'Post',
+        data: infoProAvtora,
+        success: console.log("editOsobystaInfoVykonavtsia successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllOsobystaInfoVykonavtsia( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/osobystaInfoVykonavtsia',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+//////////////
+///pidrozdil///
+//////////////
+function getPidrozdilById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/pidrozdil/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addPidrozdil(pidrozdil) {
+    jQuery.ajax({
+        url: hostName + '/pidrozdil/add',
+        type: 'Post',
+        data: pidrozdil,
+        success: console.log("addPidrozdil successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deletePidrozdil(id) {
+    jQuery.ajax({
+        url: hostName + '/pidrozdil/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deletePidrozdil successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editPidrozdil(pidrozdil) {
+    jQuery.ajax({
+        url: hostName + '/pidrozdil/edit',
+        type: 'Post',
+        data: pidrozdil,
+        success: console.log("editPidrozdil successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllPidrozdil( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/pidrozdil',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+

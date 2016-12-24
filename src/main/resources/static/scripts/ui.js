@@ -31,12 +31,91 @@ $( document ).ready(function() {
     getAllSposibDruku(function( response ) {
         console.log(response);
         $('body').text(response);
-    })
+    });
 
     getOneSposibDrukuByNazvaSposobuDruku("Цифровая печать", function( response ) {
         console.log(response);
         $('body').text(response);
     });
+
+    ///////////////////
+    ///Format//////////
+    ///////////////////
+
+     getFormatById(1, function( response ) {
+            console.log(response);
+            $('body').text(response);
+        });
+
+
+     getAllFormat(function( response ) {
+            console.log(response);
+            $('body').text(response);
+        });
+
+     //////////////////////////////
+     ///InfoProAvtora///
+     ////////////////////////////
+
+     getInfoProAvtoraById(1, function( response ) {
+             console.log(response);
+             $('body').text(response);
+        });
+
+
+     getAllInfoProAvtora(function( response ) {
+             console.log(response);
+             $('body').text(response);
+         });
+
+
+      //////////////////////////////
+     ///InfoProVydannia///
+     ////////////////////////////
+
+     getInfoProVydanniaById(1, function( response ) {
+              console.log(response);
+              $('body').text(response);
+         });
+
+
+      getAllInfoProVydannia(function( response ) {
+               console.log(response);
+                $('body').text(response);
+          });
+
+
+     ///////////////////
+    ///Pidrozdil///////
+    ///////////////////
+
+     getPidrozdilById(1, function( response ) {
+             console.log(response);
+             $('body').text(response);
+         });
+
+
+      getAllPidrozdil(function( response ) {
+              console.log(response);
+              $('body').text(response);
+         });
+
+     //////////////////////////////
+     ///OsobystaInfoVykonavtsia///
+     ////////////////////////////
+
+     getOsobystaInfoVykonavtsiaById(1, function( response ) {
+              console.log(response);
+              $('body').text(response);
+         });
+
+
+     getAllOsobystaInfoVykonavtsia(function( response ) {
+              console.log(response);
+              $('body').text(response);
+         });
+
+
 
 ///////////////////
 ///VydObkladynky///
