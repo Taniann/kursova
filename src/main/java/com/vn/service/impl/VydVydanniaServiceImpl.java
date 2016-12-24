@@ -35,7 +35,7 @@ public class VydVydanniaServiceImpl implements VydVydanniaService {
     }
 
     @Override
-    public VydVydannia getAllByNazvaVyduVydannia( String nazvaVyduVydannia){ return vydVydanniaRepository.findAllByNazvaVyduVydannia(nazvaVyduVydannia);}
+    public VydVydannia getOneByNazvaVyduVydannia( String nazvaVyduVydannia){ return vydVydanniaRepository.findOneByNazvaVyduVydannia(nazvaVyduVydannia);}
 
     @Override
     public VydVydannia editVydVydannia (VydVydannia vydVydannia) {

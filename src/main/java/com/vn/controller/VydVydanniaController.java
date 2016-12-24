@@ -42,9 +42,9 @@ public class VydVydanniaController {
     public List<VydVydannia> getAll() {
         return vydVydanniaService.getAll();}
 
-    @RequestMapping(path = "/nazvaVyduVydannia/{nazvaVyduVydannia}")
-    public VydVydannia getAllByNazvaVyduVydannia(@PathVariable String nazvaVyduVydannia) {
-        return vydVydanniaService.getAllByNazvaVyduVydannia(nazvaVyduVydannia);}
+    @RequestMapping(path = "/nazvaVyduVydannia")
+    public VydVydannia getOneByNazvaVyduVydannia(@RequestParam(value="nazvaVyduVydannia", required=true) String nazvaVyduVydannia) {
+        return vydVydanniaService.getOneByNazvaVyduVydannia(nazvaVyduVydannia);}
 }
 
 

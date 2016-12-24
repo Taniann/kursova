@@ -12,7 +12,7 @@ public interface VydObkladynkyService {
     VydObkladynky addVydObkladynky(VydObkladynky vydObkladynky);
     void delete(long idVydObkladynky);
     VydObkladynky getById(long idVydObkladynky);
-    VydObkladynky getAllByNazvaVyduObkladynky( String nazvaVyduObkladynky);
+    VydObkladynky getOneByNazvaVyduObkladynky( String nazvaVyduObkladynky);
     VydObkladynky editVydObkladynky(VydObkladynky vydObkladynky);
     List<VydObkladynky> getAll();
 }

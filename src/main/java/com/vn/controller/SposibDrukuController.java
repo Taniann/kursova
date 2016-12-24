@@ -41,8 +41,8 @@ public class SposibDrukuController {
     public List<SposibDruku> getAll() {
         return sposibDrukuService.getAll();}
 
-    @RequestMapping(path = "/nazvaSposobuDruku/{nazvaSposobuDruku}")
-    public SposibDruku getAllByNazvaSposobuDruku(@PathVariable String nazvaSposobuDruku) {
-        return sposibDrukuService.getAllByNazvaSposobuDruku(nazvaSposobuDruku);
+    @RequestMapping(path = "/nazvaSposobuDruku")
+    public SposibDruku getOneByNazvaSposobuDruku(@RequestParam(value="nazvaSposobuDruku", required=true)String nazvaSposobuDruku) {
+        return sposibDrukuService.getOneByNazvaSposobuDruku(nazvaSposobuDruku);
     }
 }

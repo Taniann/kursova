@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SposibDrukuRepository extends JpaRepository<SposibDruku, Long> {
-    SposibDruku findAllByNazvaSposobuDruku( String nazvaSposobuDruku);
+    SposibDruku findOneByNazvaSposobuDruku( String nazvaSposobuDruku);
 }

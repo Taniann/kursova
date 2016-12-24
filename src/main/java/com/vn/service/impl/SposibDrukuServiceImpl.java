@@ -35,7 +35,7 @@ public class SposibDrukuServiceImpl implements SposibDrukuService {
     }
 
     @Override
-    public SposibDruku getAllByNazvaSposobuDruku( String nazvaSposobuDruku){ return sposibDrukuRepository.findAllByNazvaSposobuDruku(nazvaSposobuDruku);}
+    public SposibDruku getOneByNazvaSposobuDruku( String nazvaSposobuDruku){ return sposibDrukuRepository.findOneByNazvaSposobuDruku(nazvaSposobuDruku);}
 
     @Override
     public SposibDruku editSposibDruku(SposibDruku sposibDruku) {

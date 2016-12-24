@@ -3,6 +3,10 @@ errorFunc = function( jqXHR, textStatus, errorThrown ){
     console.log("jqXHR = "+jqXHR+ "; textStatus = "+textStatus+"; errorThrown = "+errorThrown)
 };
 
+//////////////
+///Techcard///
+//////////////
+
 function getTechcardById(id, successFunc) {
     jQuery.ajax( {
         url: hostName +'/techcards/' + id,
@@ -61,6 +65,9 @@ function getAllTechcardByInfoProVydannia(idVydannia, successFunc) {
     } );
 }
 
+/////////////////////
+///SposibDruku///////
+/////////////////////
 function getSposibDrukuById(id, successFunc) {
     jQuery.ajax( {
         url: hostName +'/sposobyDruku/' + id,
@@ -101,8 +108,173 @@ function editSposibDruku(sposibDruku) {
 }
 
 function getAllSposibDruku( successFunc) {
+    jQuery.ajax({
+        url: hostName + '/sposobyDruku',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    });
+
+}
+
+function getOneSposibDrukuByNazvaSposobuDruku(nazvaSposobuDruku, successFunc) {
     jQuery.ajax( {
-        url: hostName +'/sposobyDruku',
+        url: hostName +'/sposobyDruku/nazvaSposobuDruku/' + nazvaSposobuDruku,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+///////////////////
+///VydObkladynky///
+///////////////////
+
+function getVydObkladynkyById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyObkladynky/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addVydObkladynky(vydObkladynky) {
+    jQuery.ajax({
+        url: hostName + '/vydyObkladynky/add',
+        type: 'Post',
+        data: vydObkladynky,
+        success: console.log("addVydObkladynky successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteVydObkladynky(id) {
+    jQuery.ajax({
+        url: hostName + '/vydyObkladynky/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteVydObkladynky successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editVydObkladynky(vydObkladynky) {
+    jQuery.ajax({
+        url: hostName + '/vydyObkladynky/edit',
+        type: 'Post',
+        data: vydObkladynky,
+        success: console.log("editVydObkladynky successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllVydObkladynky( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyObkladynky',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+///////////////////
+///VydRoboty///////
+///////////////////
+
+function getVydRobotyById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyRoboty/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addVydRoboty(vydRoboty) {
+    jQuery.ajax({
+        url: hostName + '/vydyRoboty/add',
+        type: 'Post',
+        data: vydRoboty,
+        success: console.log("addVydRoboty successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteVydRoboty(id) {
+    jQuery.ajax({
+        url: hostName + '/vydyRoboty/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteVydRoboty successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editVydRoboty(vydRoboty) {
+    jQuery.ajax({
+        url: hostName + '/vydyRoboty/edit',
+        type: 'Post',
+        data: vydRoboty,
+        success: console.log("editVydRoboty successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllVydRoboty( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyRoboty',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+///////////////////
+///VydVydannia/////
+///////////////////
+
+function getVydVydanniaById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyVydannia/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addVydVydannia(vydVydannia) {
+    jQuery.ajax({
+        url: hostName + '/vydyVydannia/add',
+        type: 'Post',
+        data: vydVydannia,
+        success: console.log("addVydVydannia successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteVydVydannia(id) {
+    jQuery.ajax({
+        url: hostName + '/vydyVydannia/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteVydVydannia successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editVydVydannia(vydVydannia) {
+    jQuery.ajax({
+        url: hostName + '/vydyVydannia/edit',
+        type: 'Post',
+        data: vydVydannia,
+        success: console.log("editVydVydannia successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllVydVydannia( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyVydannia',
         type: 'GET',
         success: successFunc,
         error: errorFunc

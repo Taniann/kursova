@@ -35,7 +35,7 @@ public class VydRobotyServiceImpl implements VydRobotyService {
     }
 
     @Override
-    public VydRoboty getAllByNazvaVyduRoboty( String nazvaVyduRoboty){ return vydRobotyRepository.findAllByNazvaVyduRoboty(nazvaVyduRoboty);}
+    public VydRoboty getOneByNazvaVyduRoboty( String nazvaVyduRoboty){ return vydRobotyRepository.findOneByNazvaVyduRoboty(nazvaVyduRoboty);}
 
     @Override
     public VydRoboty editVydRoboty (VydRoboty vydRoboty) {

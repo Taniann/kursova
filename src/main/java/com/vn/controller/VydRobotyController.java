@@ -41,7 +41,7 @@ public class VydRobotyController {
     public List<VydRoboty> getAll() {
         return vydRobotyService.getAll();}
 
-    @RequestMapping(path = "/nazvaVyduRoboty/{nazvaVyduRoboty}")
-    public VydRoboty getAllByNazvaVyduRoboty(@PathVariable String nazvaVyduRoboty) {
-        return vydRobotyService.getAllByNazvaVyduRoboty(nazvaVyduRoboty);}
+    @RequestMapping(path = "/nazvaVyduRoboty")
+    public VydRoboty getOneByNazvaVyduRoboty(@RequestParam(value="nazvaVyduRoboty", required=true) String nazvaVyduRoboty) {
+        return vydRobotyService.getOneByNazvaVyduRoboty(nazvaVyduRoboty);}
 }

@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VydVydanniaRepository extends JpaRepository<VydVydannia, Long> {
-    VydVydannia findAllByNazvaVyduVydannia( String nazvaVyduVydannia);
+    VydVydannia findOneByNazvaVyduVydannia( String nazvaVyduVydannia);
 }

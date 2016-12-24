@@ -41,8 +41,8 @@ public class VydObkladynkyController {
     public List<VydObkladynky> getAll() {
         return vydObkladynkyService.getAll();}
 
-    @RequestMapping(path = "/nazvaVyduObkladynky/{nazvaVyduObkladynky}")
-    public VydObkladynky getAllByNazvaVyduObkladynky(@PathVariable String nazvaVyduObkladynky) {
-        return vydObkladynkyService.getAllByNazvaVyduObkladynky(nazvaVyduObkladynky);}
+    @RequestMapping(path = "/nazvaVyduObkladynky")
+    public VydObkladynky getOneByNazvaVyduObkladynky(@RequestParam(value="nazvaVyduObkladynky", required=true) String nazvaVyduObkladynky) {
+        return vydObkladynkyService.getOneByNazvaVyduObkladynky(nazvaVyduObkladynky);}
 
 }

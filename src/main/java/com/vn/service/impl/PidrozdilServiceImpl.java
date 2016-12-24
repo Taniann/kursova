@@ -35,8 +35,8 @@ public class PidrozdilServiceImpl implements PidrozdilService {
     }
 
     @Override
-    public Pidrozdil getByNazvaPidrozdilu(String nazvaPidrozdilu) {
-        return pidrozdilRepository.findByNazvaPidrozdilu(nazvaPidrozdilu);
+    public Pidrozdil getOneByNazvaPidrozdilu(String nazvaPidrozdilu) {
+        return pidrozdilRepository.findOneByNazvaPidrozdilu(nazvaPidrozdilu);
     }
 
     @Override

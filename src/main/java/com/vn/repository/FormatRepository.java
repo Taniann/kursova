@@ -12,6 +12,6 @@ import java.util.List;
 
 @Repository
 public interface FormatRepository extends JpaRepository<Format, Long> {
-    List<Format> findAllByNazvaFormatu(@Param("nazvaFormatu") String nazvaFormatu);
+    List<Format> findOneByNazvaFormatu(@Param("nazvaFormatu") String nazvaFormatu);
 
 }

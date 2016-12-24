@@ -18,6 +18,10 @@ $( document ).ready(function() {
         $('body').text(response);
     });
 
+/////////////////////
+///SposibDruku///////
+/////////////////////
+
     getSposibDrukuById(1, function( response ) {
         console.log(response);
         $('body').text(response);
@@ -28,6 +32,57 @@ $( document ).ready(function() {
         console.log(response);
         $('body').text(response);
     })
+
+    getSposibDrukuById("журнал", function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
+///////////////////
+///VydObkladynky///
+///////////////////
+    getVydObkladynkyById(1, function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
+
+    getAllVydObkladynky(function( response ) {
+        console.log(response);
+        $('body').text(response);
+    })
+
+
+///////////////////
+///VydRoboty///////
+///////////////////
+
+    getVydRobotyById(1, function( response ) {
+    console.log(response);
+    $('body').text(response);
+});
+
+
+getAllVydRoboty(function( response ) {
+    console.log(response);
+    $('body').text(response);
+});
+
+///////////////////
+///VydVydannia/////
+///////////////////
+
+    getVydVydanniaById(1, function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
+
+    getAllVydVydannia(function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
 
 });
 

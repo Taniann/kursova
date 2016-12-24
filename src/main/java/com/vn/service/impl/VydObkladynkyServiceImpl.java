@@ -35,7 +35,7 @@ public class VydObkladynkyServiceImpl implements VydObkladynkyService {
     }
 
     @Override
-    public VydObkladynky getAllByNazvaVyduObkladynky( String nazvaVyduObkladynky){ return vydObkladynkyRepository.findAllByNazvaVyduObkladynky(nazvaVyduObkladynky);}
+    public VydObkladynky getOneByNazvaVyduObkladynky( String nazvaVyduObkladynky){ return vydObkladynkyRepository.findOneByNazvaVyduObkladynky(nazvaVyduObkladynky);}
 
     @Override
     public VydObkladynky editVydObkladynky(VydObkladynky vydObkladynky) {

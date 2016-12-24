@@ -12,7 +12,7 @@ public interface VydRobotyService {
     VydRoboty addVydRoboty(VydRoboty vydRoboty);
     void delete(long idVydRoboty);
     VydRoboty getById(long idVydRoboty);
-    VydRoboty getAllByNazvaVyduRoboty( String nazvaVyduRoboty);
+    VydRoboty getOneByNazvaVyduRoboty( String nazvaVyduRoboty);
     VydRoboty editVydRoboty(VydRoboty vydRoboty);
     List<VydRoboty> getAll();
 }

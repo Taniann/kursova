@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PidrozdilRepository extends JpaRepository<Pidrozdil, Long> {
-    Pidrozdil findByNazvaPidrozdilu(@Param("nazvaPidrozdilu") String nazvaPidrozdilu);
+    Pidrozdil findOneByNazvaPidrozdilu(@Param("nazvaPidrozdilu") String nazvaPidrozdilu);
 }
