@@ -177,6 +177,14 @@ function getAllVydObkladynky( successFunc) {
     } );
 }
 
+function getOneVydObkladynkyByNazvaVyduObkladynky(nazvaVyduObkladynky, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyObkladynky/nazvaVyduObkladynky/?nazvaVyduObkladynky=' + nazvaVyduObkladynky,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
 ///////////////////
 ///VydRoboty///////
 ///////////////////
@@ -229,6 +237,14 @@ function getAllVydRoboty( successFunc) {
     } );
 }
 
+function getOneVydyRobotyByNazvaVyduRoboty(nazvaVyduRoboty, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyRoboty/nazvaVyduRoboty/?nazvaVyduRoboty=' + nazvaVyduRoboty,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
 ///////////////////
 ///VydVydannia/////
 ///////////////////
@@ -275,6 +291,14 @@ function editVydVydannia(vydVydannia) {
 function getAllVydVydannia( successFunc) {
     jQuery.ajax( {
         url: hostName +'/vydyVydannia',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+function getOneVydVydanniaByNazvaVyduVydannia(nazvaVyduVydannia, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/vydyVydannia/nazvaVyduVydannia/?nazvaVyduVydannia=' + nazvaVyduVydannia,
         type: 'GET',
         success: successFunc,
         error: errorFunc

@@ -131,6 +131,12 @@ $( document ).ready(function() {
         $('body').text(response);
     })
 
+    getOneVydObkladynkyByNazvaVyduObkladynky("твердая", function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
+
 
 ///////////////////
 ///VydRoboty///////
@@ -147,6 +153,12 @@ getAllVydRoboty(function( response ) {
     $('body').text(response);
 });
 
+    getOneVydyRobotyByNazvaVyduRoboty("редактирование", function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
+
 ///////////////////
 ///VydVydannia/////
 ///////////////////
@@ -158,6 +170,12 @@ getAllVydRoboty(function( response ) {
 
 
     getAllVydVydannia(function( response ) {
+        console.log(response);
+        $('body').text(response);
+    });
+
+
+    getOneVydVydanniaByNazvaVyduVydannia("журнал", function( response ) {
         console.log(response);
         $('body').text(response);
     });

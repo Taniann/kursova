@@ -17,7 +17,7 @@ public class PidrozdilController {
 @Autowired
 private PidrozdilService pidrozdilService;
 
-    @RequestMapping(path = "/{id}")
+    @RequestMapping(path = "/{idPidrozdilu}")
     public Pidrozdil getById(@PathVariable long idPidrozdilu) {
         return pidrozdilService.getById(idPidrozdilu);
     }
