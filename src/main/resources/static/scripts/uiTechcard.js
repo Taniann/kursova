@@ -15,7 +15,11 @@ $( document ).ready(function() {
                 "data" : {
                     _:    "infoProVydannia.idVydannia"
                 }
-            }, {
+            },{
+               "data" : {
+               _:    "VydRoboty.nazvaVyduRoboty"
+              }
+              }, {
                 "data" : {
                     _:    "osobystaInfoVykonavtsia.pib"
                 }

@@ -2,7 +2,7 @@
 $( document ).ready(function() {
     console.log("Ready!");
 
-     getAllPidrozdil(function (response) {
+     getAllSposibDruku(function (response) {
                 console.log("filling table with data..." + JSON.stringify(response))
                 $("#dataTables-example").DataTable( {
                     responsive: true,
@@ -10,9 +10,9 @@ $( document ).ready(function() {
                     "bAutoWidth" : false,
                     "aaData": response,
                     "columns" : [ {
-                        "data" : "idPidrozdilu"
+                        "data" : "idSposobuDruku"
                     }, {
-                        "data" : "nazvaPidrozdilu"
+                        "data" : "nazvaSposobuDruku"
                     } ]
                 } );
             });
