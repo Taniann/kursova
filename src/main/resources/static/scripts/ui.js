@@ -45,6 +45,7 @@ $( document ).ready(function() {
 
 
 
+
 //    getTechcardById(1, function( response ) {
 //        console.log(response);
 //        $('body').text(response);
