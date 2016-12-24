@@ -51,12 +51,12 @@ public class InfoProVydanniaController {
     public List<InfoProVydannia> getAll() {
         return infoProVydanniaService.getAll();}
 
-    @RequestMapping(path = "/povnaNazva/{povnaNazva}")
-    public List<InfoProVydannia> getAllByPovnaNazva(@PathVariable String povnaNazva) {
+    @RequestMapping(path = "/povnaNazva")
+    public List<InfoProVydannia> getAllByPovnaNazva(@RequestParam(value="povnaNazva", required=true) String povnaNazva) {
         return infoProVydanniaService.getAllByPovnaNazva(povnaNazva);}
 
-    @RequestMapping(path = "/korotkaNazva/{korotkaNazva}")
-    public List<InfoProVydannia> getAllByKorotkaNazva(@PathVariable String korotkaNazva) {
+    @RequestMapping(path = "/korotkaNazva")
+    public List<InfoProVydannia> getAllByKorotkaNazva(@RequestParam(value="korotkaNazva", required=true) String korotkaNazva) {
         return infoProVydanniaService.getAllByKorotkaNazva(korotkaNazva);}
 
     @RequestMapping(path = "/idVyduVydannia/{idVyduVydannia}")

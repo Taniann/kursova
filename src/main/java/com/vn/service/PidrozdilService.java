@@ -10,7 +10,7 @@ import java.util.List;
 public interface PidrozdilService {
     Pidrozdil addPidrozdil(Pidrozdil pidrozdil);
     void delete(long idPidrozdilu);
-    Pidrozdil getById(long idPidrozdilu);
+    Pidrozdil getById(Long idPidrozdilu);
     Pidrozdil getOneByNazvaPidrozdilu (String nazvaPidrozdilu);
     Pidrozdil editPidrozdil(Pidrozdil pidrozdil);
     List<Pidrozdil> getAll();

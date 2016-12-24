@@ -51,8 +51,8 @@ public class OsobystaInfoVykonavtsiaController {
     public List<OsobystaInfoVykonavtsia> getAllByIdentyfKod(@PathVariable long identyfKod) {
         return osobystaInfoVykonavtsiaService.getAllByIdentyfKod(identyfKod);}
 
-    @RequestMapping(path = "/korotkaNazva/{korotkaNazva}")
-    public List<OsobystaInfoVykonavtsia> getAllByPib(@PathVariable String pib) {
+    @RequestMapping(path = "/pib")
+    public List<OsobystaInfoVykonavtsia> getAllByPib(@RequestParam(value="pib", required=true)String pib) {
         return osobystaInfoVykonavtsiaService.getAllByPib(pib);}
 
     @RequestMapping(path = "/vydVydannia/{vydVydannia}")

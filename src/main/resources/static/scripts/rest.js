@@ -356,6 +356,15 @@ function getAllFormat( successFunc) {
     } );
 }
 
+function getOneFormatByNazvaFormatu(nazvaFormatu, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/formaty/nazvaFormatu/?nazvaFormatu=' + nazvaFormatu,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
 //////////////
 ///InfoProAvtora///
 //////////////
@@ -401,6 +410,24 @@ function editInfoProAvtora(infoProAvtora) {
 function getAllInfoProAvtora( successFunc) {
     jQuery.ajax( {
         url: hostName +'/infoProAvtora',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function getOneInfoProAvtoraByPrizvyshche(prizvyshche, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProAvtora/prizvyshche/?prizvyshche=' + prizvyshche,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function getOneInfoProAvtoraByImiia(imiia, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProAvtora/imiia/?imiia=' + imiia,
         type: 'GET',
         success: successFunc,
         error: errorFunc
@@ -459,6 +486,24 @@ function getAllInfoProVydannia( successFunc) {
     } );
 }
 
+function getOneInfoProVydanniaByPovnaNazva(povnaNazva, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProVydannia/povnaNazva/?povnaNazva=' + povnaNazva,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function getOneInfoProVydanniaByKorotkaNazva(korotkaNazva, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/infoProVydannia/korotkaNazva/?korotkaNazva=' + korotkaNazva,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
 //////////////
 ///OsobystaInfoVykonavtsia///
 //////////////
@@ -505,6 +550,75 @@ function editOsobystaInfoVykonavtsia(infoProAvtora) {
 function getAllOsobystaInfoVykonavtsia( successFunc) {
     jQuery.ajax( {
         url: hostName +'/osobystaInfoVykonavtsia',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function getOneOsobystaInfoVykonavtsiaByPib(pib, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/osobystaInfoVykonavtsia/pib/?pib=' + pib,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+//////////////
+///rahunok///
+//////////////
+function getRahunokById(id, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/rahunky/' + id,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function addRahunok(rahunok) {
+    jQuery.ajax({
+        url: hostName + '/rahunky/add',
+        type: 'Post',
+        data: pidrozdil,
+        success: console.log("addRahunok successfully completed"),
+        error: errorFunc
+    });
+}
+
+
+function deleteRahunok(id) {
+    jQuery.ajax({
+        url: hostName + '/rahunky/delete/'+ id,
+        type: 'DELETE',
+        success: console.log("deleteRahunok successfully completed"),
+        error: errorFunc
+    });
+}
+
+function editPidrozdil(pidrozdil) {
+    jQuery.ajax({
+        url: hostName + '/rahunky/edit',
+        type: 'Post',
+        data: pidrozdil,
+        success: console.log("editRahunok successfully completed"),
+        error: errorFunc
+    });
+}
+
+function getAllRahunok( successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/rahunky',
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+function getOneRahunokByZamovnyk(zamovnyk, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/rahunky/zamovnyk/?zamovnyk=' + zamovnyk,
         type: 'GET',
         success: successFunc,
         error: errorFunc
@@ -561,4 +675,15 @@ function getAllPidrozdil( successFunc) {
         error: errorFunc
     } );
 }
+
+function getOnePidrozdilByNazvaPidrozdilu(nazvaPidrozdilu, successFunc) {
+    jQuery.ajax( {
+        url: hostName +'/pidrozdil/nazvaPidrozdilu/?nazvaPidrozdilu=' + nazvaPidrozdilu,
+        type: 'GET',
+        success: successFunc,
+        error: errorFunc
+    } );
+}
+
+
 

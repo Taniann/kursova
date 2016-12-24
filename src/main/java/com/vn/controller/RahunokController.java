@@ -64,10 +64,11 @@ public class RahunokController {
         return rahunokService.getAllByDataVypysky(dataVypysky);
     }
 
-    @RequestMapping(path = "/zamovnyk/{zamovnyk}")
-    public List<Rahunok> getAllZamovnyk(@PathVariable String zamovnyk ) {
+    @RequestMapping(path = "/zamovnyk")
+    public List<Rahunok> getAllZamovnyk(@RequestParam(value="zamovnyk", required=true) String zamovnyk ) {
         return rahunokService.getAllByZamovnyk(zamovnyk);
     }
+
 
     @RequestMapping(path = "/dataSplaty/{dataSplaty}")
     public List<Rahunok> getAllDataSplaty(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date dataSplaty ) {

@@ -44,7 +44,7 @@ public class FormatController {
     public List<Format> getAll() {
         return formatService.getAll();}
 
-    @RequestMapping(path = "/nazvaFormatu/{nazvaFormatu}")
+    @RequestMapping(path = "/nazvaFormatu")
     public List<Format> getOneByNazvaFormatu(@RequestParam(value="nazvaFormatu", required=true) String nazvaFormatu) {
         return formatService.getOneByNazvaFormatu(nazvaFormatu);}
 }

@@ -53,6 +53,11 @@ $( document ).ready(function() {
             $('body').text(response);
         });
 
+     getOneFormatByNazvaFormatu("A4", function( response ) {
+             console.log(response);
+             $('body').text(response);
+         });
+
      //////////////////////////////
      ///InfoProAvtora///
      ////////////////////////////
@@ -67,6 +72,16 @@ $( document ).ready(function() {
              console.log(response);
              $('body').text(response);
          });
+
+     getOneInfoProAvtoraByPrizvyshche("AAA", function( response ) {
+             console.log(response);
+             $('body').text(response);
+         });
+
+      getOneInfoProAvtoraByImiia("AAA", function( response ) {
+              console.log(response);
+              $('body').text(response);
+          });
 
 
       //////////////////////////////
@@ -85,6 +100,17 @@ $( document ).ready(function() {
           });
 
 
+      getOneInfoProVydanniaByPovnaNazva("Фолио", function( response ) {
+              console.log(response);
+              $('body').text(response);
+          });
+
+      getOneInfoProVydanniaByKorotkaNazva("Фолио", function( response ) {
+               console.log(response);
+               $('body').text(response);
+           });
+
+
      ///////////////////
     ///Pidrozdil///////
     ///////////////////
@@ -98,6 +124,11 @@ $( document ).ready(function() {
       getAllPidrozdil(function( response ) {
               console.log(response);
               $('body').text(response);
+         });
+
+     getOnePidrozdilByNazvaPidrozdilu("редагування", function( response ) {
+             console.log(response);
+             $('body').text(response);
          });
 
      //////////////////////////////
@@ -114,6 +145,11 @@ $( document ).ready(function() {
               console.log(response);
               $('body').text(response);
          });
+
+     getOneOsobystaInfoVykonavtsiaByPib("ААА", function( response ) {
+               console.log(response);
+               $('body').text(response);
+              });
 
 
 
@@ -180,6 +216,29 @@ getAllVydRoboty(function( response ) {
         $('body').text(response);
     });
 
+    ///////////////////
+    ///Rahunok/////
+    ///////////////////
+
+        getRahunokById(1, function( response ) {
+            console.log(response);
+            $('body').text(response);
+        });
+
+
+        getAllRahunok(function( response ) {
+            console.log(response);
+            $('body').text(response);
+        });
+
+
+        getOneRahunokByZamovnyk("TTT", function( response ) {
+            console.log(response);
+            $('body').text(response);
+        });
+
 
 });
+
+
 
