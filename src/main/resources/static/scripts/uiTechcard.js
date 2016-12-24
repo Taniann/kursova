@@ -71,7 +71,7 @@ $( document ).ready(function() {
 
     getAllTechcard(function (response) {
         console.log("filling table with data..." + JSON.stringify(response))
-        table = $("#dataTables-example").DataTable( {
+        table = $("#tableTechcard").DataTable( {
             responsive: true,
             "processing": true,
             "bAutoWidth" : false,

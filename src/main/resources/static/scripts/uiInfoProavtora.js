@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
    getAllInfoProAvtora(function (response) {
              console.log("filling table with data..." + JSON.stringify(response))
-             $("#dataTables-example").DataTable( {
+             $("#tableInfoProAvtora").DataTable( {
                  responsive: true,
                  "processing": true,
                  "bAutoWidth" : false,

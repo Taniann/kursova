@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
      getAllVydRoboty(function (response) {
                 console.log("filling table with data..." + JSON.stringify(response))
-                $("#dataTables-example").DataTable( {
+                $("#tableVydRoboty").DataTable( {
                     responsive: true,
                     "processing": true,
                     "bAutoWidth" : false,

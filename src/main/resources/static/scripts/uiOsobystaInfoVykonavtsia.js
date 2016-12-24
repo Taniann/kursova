@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
        getAllOsobystaInfoVykonavtsia(function (response) {
              console.log("filling table with data..." + JSON.stringify(response))
-             $("#dataTables-example").DataTable( {
+             $("#tableOsobystaInfoVykonavtsia").DataTable( {
                  responsive: true,
                  "processing": true,
                  "bAutoWidth" : false,
