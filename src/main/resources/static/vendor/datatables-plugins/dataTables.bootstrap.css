@@ -24,6 +24,10 @@ div.dataTables_filter input {
 	display: inline-block;
 }
 
+/*input {*/
+    /*width: 100px;*/
+/*}*/
+
 div.dataTables_info {
 	padding-top: 8px;
 	white-space: nowrap;

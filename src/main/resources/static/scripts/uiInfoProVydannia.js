@@ -4,10 +4,10 @@ $( document ).ready(function() {
 
 getAllInfoProVydannia(function (response) {
         console.log("filling table with data..." + JSON.stringify(response))
-        $("#dataTables-example").DataTable( {
+        $("#tableInfoProVydannia").DataTable( {
             responsive: true,
-            "processing": true,
-            "bAutoWidth" : false,
+            //"processing": true,
+            //"bAutoWidth" : false,
             "aaData": response,
             "columns" : [ {
                 "data" : "idVydannia"
@@ -39,6 +39,7 @@ getAllInfoProVydannia(function (response) {
                 "data" : "infoProAvtora3"
             }  ]
         } );
+    console.log("Filled!")
     });
 
 });

@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
  getAllRahunok(function (response) {
              console.log("filling table with data..." + JSON.stringify(response))
-             $("#dataTables-example").DataTable( {
+             $("#tableRahunok").DataTable( {
                  responsive: true,
                  "processing": true,
                  "bAutoWidth" : false,
