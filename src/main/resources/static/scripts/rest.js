@@ -119,7 +119,7 @@ function getAllSposibDruku( successFunc) {
 
 function getOneSposibDrukuByNazvaSposobuDruku(nazvaSposobuDruku, successFunc) {
     jQuery.ajax( {
-        url: hostName +'/sposobyDruku/nazvaSposobuDruku/' + nazvaSposobuDruku,
+        url: hostName +'/sposobyDruku/nazvaSposobuDruku/?nazvaSposobuDruku=' + nazvaSposobuDruku,
         type: 'GET',
         success: successFunc,
         error: errorFunc

@@ -33,7 +33,7 @@ $( document ).ready(function() {
         $('body').text(response);
     })
 
-    getSposibDrukuById("журнал", function( response ) {
+    getOneSposibDrukuByNazvaSposobuDruku("Цифровая печать", function( response ) {
         console.log(response);
         $('body').text(response);
     });
