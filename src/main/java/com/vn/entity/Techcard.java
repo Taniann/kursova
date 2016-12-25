@@ -21,15 +21,15 @@ public class Techcard {
     @Column
     private Long idTechCarty;
 
-    @OneToOne(cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
     private Set<VydRoboty> vydRobotySet; //one to many
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @PrimaryKeyJoinColumn
     private OsobystaInfoVykonavtsia osobystaInfoVykonavtsia;
 

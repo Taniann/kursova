@@ -42,7 +42,7 @@ public class TechcardServiceImpl implements TechcardService {
 
     @Override
     public Techcard editTechcard(Techcard techcard) {
-        return techcardRepository.saveAndFlush(techcard);
+        return techcardRepository.save(techcard);
     }
 
     @Override

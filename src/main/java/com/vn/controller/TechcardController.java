@@ -37,10 +37,13 @@ public class TechcardController {
         return techcardService.addTechcard(techcard);
     }
 
-    @RequestMapping(value = "/delete/{idTechCarty}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable("idTechCarty") Long idTechCarty) {
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestBody Techcard techcard) {
 
-         techcardService.delete(idTechCarty);
+         techcardService.delete(techcard.getIdTechCarty());
+        return "{\n" +
+                "  \"data\": []\n" +
+                "}";
     }
 
     @RequestMapping(path = "/edit", method = RequestMethod.POST)

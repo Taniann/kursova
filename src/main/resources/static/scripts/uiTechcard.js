@@ -1,3 +1,7 @@
+var editorCreate;
+var editorEdit;
+var editorDelete;
+var trToRemove;
 
 /* Custom filtering function which will search data in column four between two values */
 $.fn.dataTable.ext.search.push(
@@ -72,6 +76,7 @@ $( document ).ready(function() {
     getAllTechcard(function (response) {
         console.log("filling table with data..." + JSON.stringify(response))
         table = $("#tableTechcard").DataTable( {
+
             initComplete: function () {
                 this.api().columns().every( function () {
                     var column = this;
@@ -124,12 +129,20 @@ $( document ).ready(function() {
                 "data" : {
                     _:    "VydRoboty.nazvaVyduRoboty"
                 }
-            }]
+            } , {
+                data: null,
+                defaultContent: '<a href="#" class="remove">Delete</a>',
+                orderable: false
+            }],
+            select: true,
+            buttons: [
+                { extend: "create", editor: editorCreate },
+                { extend: "edit",   editor: editorEdit },
+                { extend: "remove", editor: editorDelete }
+            ]
         } );
 
     });
-
-
 
     // Event listener to the two range filtering inputs to redraw on input
     $('#min3, #max3').keyup( function() {
@@ -149,6 +162,277 @@ $( document ).ready(function() {
     } );
 
 
+    editorCreate = new $.fn.dataTable.Editor( {
+        ajax: {
+            url: "http://localhost:8080/techcards/add",
+            type: 'POST',
+            contentType: 'application/json',
+            'data':  function ( d ) {
+                return JSON.stringify(d.data[Object.keys(d.data)[0]]);
+            }
+            //processData: false, // important so the raw data makes it to the beforeSend handler
+            //beforeSend:function(  jqXHR,  settings )
+            //{
+            //    /// <summary>
+            //    /// Converts to json for transmission and adds any extra data desired.
+            //    /// </summary>
+            //    /// <param name="jqXHR">The jqXHR object.</param>
+            //    /// <param name="settings">The settings object.</param>
+            //    /// <param name="data">The data that will be sent to the server.</param>
+            //
+            //    var data = settings.data;
+            //
+            //    // I postponed the serialization as long as possible, so this is the
+            //    // last chance to attach extra data to send along
+            //    //data.extraData = extraData;
+            //
+            //
+            //    settings.data = JSON.stringify({ WebMethodParameterName: data });
+            //    console.log("Going to send: " + settings.data);
+            //}
+        },
+        table: "#tableTechcard",
+        idSrc: "idTechCarty",
+        fields: [ {
+            label: "№ Техкартки:",
+            name: "idTechCarty"
+        }, {
+            label: "Last name:",
+            name: "infoProVydannia.idVydannia"
+        }, {
+            label: "Position:",
+            name: "osobystaInfoVykonavtsia.pib"
+        }, {
+            label: "Office:",
+            name: "terminPochatku",
+            type: "datetime"
+        }, {
+            label: "Extension:",
+            name: "terminZakinchennia",
+            type: "datetime"
+        }, {
+            label: "Start date:",
+            name: "factychnyiPochatok",
+            type: "datetime"
+        }, {
+            label: "Start date:",
+            name: "factychnyiKinec",
+            type: "datetime"
+        },{
+            label: "Salary:",
+            name: "vartistRoboty"
+        },{
+            label: "Salary:",
+            name: "vartistDruku"
+        },{
+            label: "Salary:",
+            name: "sumVartist"
+        },{
+            label: "Salary:",
+            name: "VydRoboty.nazvaVyduRoboty"
+        }
+        ],
+        formOptions: {
+            bubble: {
+                title: 'Edit',
+                buttons: false,
+                submit: 'allIfChanged'
+            },
+            submit: 'allIfChanged'
+        }
+    } );
+
+    editorEdit = new $.fn.dataTable.Editor( {
+        ajax: {
+            url: "http://localhost:8080/techcards/edit",
+            type: 'POST',
+            contentType: 'application/json',
+            'data':  function ( d ) {
+                return JSON.stringify(d.data[Object.keys(d.data)[0]]);
+            }
+            //processData: false, // important so the raw data makes it to the beforeSend handler
+            //beforeSend:function(  jqXHR,  settings )
+            //{
+            //    /// <summary>
+            //    /// Converts to json for transmission and adds any extra data desired.
+            //    /// </summary>
+            //    /// <param name="jqXHR">The jqXHR object.</param>
+            //    /// <param name="settings">The settings object.</param>
+            //    /// <param name="data">The data that will be sent to the server.</param>
+            //
+            //    var data = settings.data;
+            //
+            //    // I postponed the serialization as long as possible, so this is the
+            //    // last chance to attach extra data to send along
+            //    //data.extraData = extraData;
+            //
+            //
+            //    settings.data = JSON.stringify({ WebMethodParameterName: data });
+            //    console.log("Going to send: " + settings.data);
+            //}
+        },
+        table: "#tableTechcard",
+        idSrc: "idTechCarty",
+        fields: [ {
+            label: "№ Техкартки:",
+            name: "idTechCarty"
+        }, {
+            label: "Last name:",
+            name: "infoProVydannia.idVydannia"
+        }, {
+            label: "Position:",
+            name: "osobystaInfoVykonavtsia.pib"
+        }, {
+            label: "Office:",
+            name: "terminPochatku",
+            type: "datetime"
+        }, {
+            label: "Extension:",
+            name: "terminZakinchennia",
+            type: "datetime"
+        }, {
+            label: "Start date:",
+            name: "factychnyiPochatok",
+            type: "datetime"
+        }, {
+            label: "Start date:",
+            name: "factychnyiKinec",
+            type: "datetime"
+        },{
+            label: "Salary:",
+            name: "vartistRoboty"
+        },{
+            label: "Salary:",
+            name: "vartistDruku"
+        },{
+            label: "Salary:",
+            name: "sumVartist"
+        },{
+            label: "Salary:",
+            name: "VydRoboty.nazvaVyduRoboty"
+        }
+        ],
+        formOptions: {
+            bubble: {
+                title: 'Edit',
+                buttons: false,
+                submit: 'allIfChanged'
+            },
+            submit: 'allIfChanged'
+        }
+    } );
+
+    editorDelete = new $.fn.dataTable.Editor( {
+        ajax: {
+            url: "http://localhost:8080/techcards/delete",
+            type: 'POST',
+            contentType: 'application/json',
+            'data':  function ( d ) {
+                return JSON.stringify(d.data[Object.keys(d.data)[0]]);
+            }
+            //processData: false, // important so the raw data makes it to the beforeSend handler
+            //beforeSend:function(  jqXHR,  settings )
+            //{
+            //    /// <summary>
+            //    /// Converts to json for transmission and adds any extra data desired.
+            //    /// </summary>
+            //    /// <param name="jqXHR">The jqXHR object.</param>
+            //    /// <param name="settings">The settings object.</param>
+            //    /// <param name="data">The data that will be sent to the server.</param>
+            //
+            //    var data = settings.data;
+            //
+            //    // I postponed the serialization as long as possible, so this is the
+            //    // last chance to attach extra data to send along
+            //    //data.extraData = extraData;
+            //
+            //
+            //    settings.data = JSON.stringify({ WebMethodParameterName: data });
+            //    console.log("Going to send: " + settings.data);
+            //}
+        },
+        table: "#tableTechcard",
+        idSrc: "idTechCarty",
+        fields: [ {
+            label: "№ Техкартки:",
+            name: "idTechCarty"
+        }, {
+            label: "Last name:",
+            name: "infoProVydannia.idVydannia"
+        }, {
+            label: "Position:",
+            name: "osobystaInfoVykonavtsia.pib"
+        }, {
+            label: "Office:",
+            name: "terminPochatku",
+            type: "datetime"
+        }, {
+            label: "Extension:",
+            name: "terminZakinchennia",
+            type: "datetime"
+        }, {
+            label: "Start date:",
+            name: "factychnyiPochatok",
+            type: "datetime"
+        }, {
+            label: "Start date:",
+            name: "factychnyiKinec",
+            type: "datetime"
+        },{
+            label: "Salary:",
+            name: "vartistRoboty"
+        },{
+            label: "Salary:",
+            name: "vartistDruku"
+        },{
+            label: "Salary:",
+            name: "sumVartist"
+        },{
+            label: "Salary:",
+            name: "VydRoboty.nazvaVyduRoboty"
+        }
+        ]
+    } );
+
+
+    $('button.new').on( 'click', function () {
+        editorCreate
+            .title( 'Create new row' )
+            .buttons( { "label": "Add", "fn": function () { editorCreate.submit() } } )
+            .create();
+    } );
+
+    $('#tableTechcard').on( 'click', 'tbody td', function (e) {
+        if ( $(this).index() < 12 ) {
+            editorEdit.bubble( this );
+        }
+    } );
+
+    $('#tableTechcard').on( 'click', 'a.remove', function (e) {
+        trToRemove = $(this).closest('tr:has(*[role])').find('td:first').text();
+        editorDelete
+            .title( 'Delete row' )
+            .message( 'Are you sure you wish to delete this row?' )
+            .buttons( { "label": "Delete", "fn": function () { editorDelete.submit() } } )
+            .remove( $(this).closest('tr') );
+    } );
+
+    //$('#tableTechcard').DataTable( {
+    //    ajax: "../php/staff.php",
+    //    columns: [
+    //        { data: "first_name" },
+    //        { data: "last_name" },
+    //        { data: "position" },
+    //        { data: "office" },
+    //        { data: "start_date" },
+    //        { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) },
+    //        {
+    //            data: null,
+    //            defaultContent: '<a href="#" class="remove">Delete</a>',
+    //            orderable: false
+    //        },
+    //    ]
+    //} );
 
 
 
