@@ -35,6 +35,10 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/css/editor.dataTables.css">
+
 </head>
 
 <body>
@@ -424,6 +428,18 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
+                        <button class="new">Сворити новий запис</button>
+                        <table border="0" cellspacing="5" cellpadding="5" >
+                            <tbody><tr>
+                                <td>Дата сплати від:</td>
+                                <td><input type="text" id="min5" name="min5" class="form-control input-sm filterInput"></td>
+
+                            </tr>
+                            <tr>
+                                <td>Дата сплати  до:</td>
+                                <td><input type="text" id="max5" name="max5"  class="form-control input-sm filterInput"></td>
+                            </tr>
+                            </tbody></table>
                         <table width="100%" class="table table-striped table-bordered table-hover" id="tableRahunok">
                             <thead>
                             <tr>
@@ -436,6 +452,7 @@
                                 <th>Платіжне доручення</th>
                                 <th>Вартість послуг</th>
                                 <th>Вартість матеріалів</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -448,6 +465,20 @@
                             <!--</tr>-->
 
                             </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>№ Рахунку</th>
+                                <th>№ Техкартки</th>
+                                <th>Дата виписки</th>
+                                <th>Всього до сплати</th>
+                                <th>Замовник</th>
+                                <th>Дата сплати</th>
+                                <th>Платіжне доручення</th>
+                                <th>Вартість послуг</th>
+                                <th>Вартість матеріалів</th>
+                                <th></th>
+                            </tr>
+                            </tfoot>
                         </table>
                         <!-- /.table-responsive -->
                         <div class="well">
@@ -483,6 +514,7 @@
 <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script type="text/javascript" src="../vendor/datatables-editor/js/dataTables.editor.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>

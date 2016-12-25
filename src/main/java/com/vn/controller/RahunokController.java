@@ -35,9 +35,12 @@ public class RahunokController {
     }
 
     @RequestMapping(value = "/delete/{idRahunku}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable("idRahunku") Long idRahunku) {
+    public String delete(@RequestBody Rahunok rahunok) {
 
-        rahunokService.delete(idRahunku);
+        rahunokService.delete(rahunok.getIdRahunku());
+        return "{\n" +
+                "  \"data\": []\n" +
+                "}";
     }
 
     @RequestMapping(path = "/edit", method = RequestMethod.POST)
