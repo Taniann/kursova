@@ -25,9 +25,9 @@ public class Techcard {
     @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
-    private Set<VydRoboty> vydRobotySet; //one to many
+    private VydRoboty vydRoboty; //one to many
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 //    @PrimaryKeyJoinColumn
@@ -43,7 +43,7 @@ public class Techcard {
     private Date factychnyiPochatok;
 
     @Column
-   private Date factychnyiKinec;
+    private Date factychnyiKinec;
 
     @Column
     private Double vartistRoboty;
@@ -54,14 +54,12 @@ public class Techcard {
     @Column
     private Double sumVartist;
 
-
     public Techcard() {
     }
 
-    public Techcard(Long idTechCarty, InfoProVydannia infoProVydannia, Set<VydRoboty> vydRobotySet, OsobystaInfoVykonavtsia osobystaInfoVykonavtsia, Date terminPochatku, Date terminZakinchennia, Date factychnyiPochatok, Date factychnyiKinec, Double vartistRoboty, Double vartistDruku, Double sumVartist) {
-        this.idTechCarty = idTechCarty;
+    public Techcard(InfoProVydannia infoProVydannia, VydRoboty vydRoboty, OsobystaInfoVykonavtsia osobystaInfoVykonavtsia, Date terminPochatku, Date terminZakinchennia, Date factychnyiPochatok, Date factychnyiKinec, Double vartistRoboty, Double vartistDruku, Double sumVartist) {
         this.infoProVydannia = infoProVydannia;
-        this.vydRobotySet = vydRobotySet;
+        this.vydRoboty = vydRoboty;
         this.osobystaInfoVykonavtsia = osobystaInfoVykonavtsia;
         this.terminPochatku = terminPochatku;
         this.terminZakinchennia = terminZakinchennia;
@@ -76,7 +74,7 @@ public class Techcard {
         return idTechCarty;
     }
 
-    public void setIdTechCarty(long idTechCarty) {
+    public void setIdTechCarty(Long idTechCarty) {
         this.idTechCarty = idTechCarty;
     }
 
@@ -88,12 +86,12 @@ public class Techcard {
         this.infoProVydannia = infoProVydannia;
     }
 
-    public Set<VydRoboty> getVydRoboty() {
-        return vydRobotySet;
+    public VydRoboty getVydRoboty() {
+        return vydRoboty;
     }
 
-    public void setVydRoboty(Set<VydRoboty> vydRobotySet) {
-        this.vydRobotySet = vydRobotySet;
+    public void setVydRoboty(VydRoboty vydRoboty) {
+        this.vydRoboty = vydRoboty;
     }
 
     public OsobystaInfoVykonavtsia getOsobystaInfoVykonavtsia() {

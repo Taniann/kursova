@@ -20,7 +20,7 @@ public interface TechcardService {
     Techcard editTechcard(Techcard techcard);
     List<Techcard> getAll();
     List<Techcard> getAllByInfoProVydannia(InfoProVydannia infoProVydannia);
-    List<Techcard> getAllByVydRobotySet(Set<VydRoboty> vydRobotySet);
+    List<Techcard> getAllByVydRoboty(VydRoboty vydRoboty);
     List<Techcard> getAllByOsobystaInfoVykonavtsia(OsobystaInfoVykonavtsia osobystaInfoVykonavtsia);
     List<Techcard> getAllTerminPochatku(Date terminPochatku);
     List<Techcard> getAllTerminZakinchennia(Date terminZakinchennia);

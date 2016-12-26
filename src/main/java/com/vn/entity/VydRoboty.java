@@ -17,7 +17,7 @@ public class VydRoboty {
     @Column
     private Long idVydRoboty;
 
-    @Column
+    @Column(unique = true)
     private String nazvaVyduRoboty;
 
     public VydRoboty() {

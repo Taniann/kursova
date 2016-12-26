@@ -8,6 +8,7 @@ import com.vn.repository.OsobystaInfoVykonavtsiaRepository;
 import com.vn.repository.TechcardRepository;
 import com.vn.service.OsobystaInfoVykonavtsiaService;
 import com.vn.service.TechcardService;
+import com.vn.service.VydRobotyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,10 +27,13 @@ public class TechcardServiceImpl implements TechcardService {
     private TechcardRepository techcardRepository;
     @Autowired
     private OsobystaInfoVykonavtsiaService osobystaInfoVykonavtsiaService;
+    @Autowired
+    private VydRobotyService vydRobotyService;
 
     @Override
     public Techcard addTechcard(Techcard techcard) {
         techcard.setOsobystaInfoVykonavtsia(osobystaInfoVykonavtsiaService.getOneByPib(techcard.getOsobystaInfoVykonavtsia().getPib()));
+        techcard.setVydRoboty(vydRobotyService.getOneByNazvaVyduRoboty(techcard.getVydRoboty().getNazvaVyduRoboty()));
         return techcardRepository.saveAndFlush(techcard);
     }
 
@@ -59,8 +63,8 @@ public class TechcardServiceImpl implements TechcardService {
     }
 
     @Override
-    public List<Techcard> getAllByVydRobotySet(Set<VydRoboty> vydRobotySet) {
-        return techcardRepository.findAllByVydRobotySet(vydRobotySet);
+    public List<Techcard> getAllByVydRoboty(VydRoboty vydRoboty) {
+        return techcardRepository.findAllByVydRoboty(vydRoboty);
 
     }
 

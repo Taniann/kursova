@@ -55,10 +55,10 @@ public class InfoProVydannia {
     @JoinColumn
     private InfoProAvtora infoProAvtora3;
 
-    public InfoProVydannia () {}
+    public InfoProVydannia() {
+    }
 
-    public InfoProVydannia(Long idVydannia, String povnaNazva, String korotkaNazva, VydVydannia vydVydannia, Integer kilkistStorinok, VydObkladynky vydObkladynky, Long tyrazh, Format format, SposibDruku sposibDruku, InfoProAvtora infoProAvtora1, InfoProAvtora infoProAvtora2, InfoProAvtora infoProAvtora3) {
-        this.idVydannia = idVydannia;
+    public InfoProVydannia(String povnaNazva, String korotkaNazva, VydVydannia vydVydannia, Integer kilkistStorinok, VydObkladynky vydObkladynky, Long tyrazh, Format format, SposibDruku sposibDruku, InfoProAvtora infoProAvtora1, InfoProAvtora infoProAvtora2, InfoProAvtora infoProAvtora3) {
         this.povnaNazva = povnaNazva;
         this.korotkaNazva = korotkaNazva;
         this.vydVydannia = vydVydannia;

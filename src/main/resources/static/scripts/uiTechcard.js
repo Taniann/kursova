@@ -127,7 +127,7 @@ $( document ).ready(function() {
                 "data" : "sumVartist"
             } , {
                 "data" : {
-                    _:    "VydRoboty.nazvaVyduRoboty"
+                    _:    "vydRoboty.nazvaVyduRoboty"
                 }
             } , {
                 data: null,
@@ -231,7 +231,7 @@ $( document ).ready(function() {
             name: "sumVartist"
         },{
             label: "Вид роботи:",
-            name: "VydRoboty.nazvaVyduRoboty",
+            name: "vydRoboty.nazvaVyduRoboty",
             type: "select",
             options: getAllVydRobotyNames()
         }
@@ -313,7 +313,7 @@ $( document ).ready(function() {
             name: "sumVartist"
         },{
             label: "Salary:",
-            name: "VydRoboty.nazvaVyduRoboty"
+            name: "vydRoboty.nazvaVyduRoboty"
         }
         ],
         formOptions: {
@@ -393,7 +393,7 @@ $( document ).ready(function() {
             name: "sumVartist"
         },{
             label: "Salary:",
-            name: "VydRoboty.nazvaVyduRoboty"
+            name: "vydRoboty.nazvaVyduRoboty"
         }
         ]
     } );

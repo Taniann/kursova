@@ -19,7 +19,7 @@ import java.util.Set;
 @Repository
 public interface TechcardRepository extends JpaRepository<Techcard, Long> {
     List<Techcard> findAllByInfoProVydannia(@Param("InfoProVydannia") InfoProVydannia infoProVydannia);
-    List<Techcard> findAllByVydRobotySet(@Param("Set<VydRoboty>") Set<VydRoboty> vydRobotySet);
+    List<Techcard> findAllByVydRoboty(@Param("VydRoboty") VydRoboty vydRoboty);
     List<Techcard> findAllByOsobystaInfoVykonavtsia(@Param("OsobystaInfoVykonavtsia") OsobystaInfoVykonavtsia osobystaInfoVykonavtsia);
     List<Techcard> findAllByTerminPochatku(@Param ("terminPochatku")Date terminPochatku);
     List<Techcard> findAllByTerminZakinchennia(@Param ("terminZakinchennia")Date terminZakinchennia);

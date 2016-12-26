@@ -61,8 +61,8 @@ public class TechcardController {
     }
 
     @RequestMapping(path = "/idVyduRoboty/{idVyduRoboty}")
-    public List<Techcard> getAllByVydRobotySet(@PathVariable Set<VydRoboty> vydRobotySet) {
-        return techcardService.getAllByVydRobotySet(vydRobotySet);
+    public List<Techcard> getAllByVydRoboty(@PathVariable VydRoboty vydRoboty) {
+        return techcardService.getAllByVydRoboty(vydRoboty);
     }
 
     @RequestMapping(path = "/idVykonavtsia/{idVykonavtsia}")
