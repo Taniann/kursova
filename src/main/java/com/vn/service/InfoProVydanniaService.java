@@ -14,7 +14,7 @@ public interface InfoProVydanniaService {
     void delete(long idVydannia);
     InfoProVydannia getById(long idVydannia);
     List<InfoProVydannia> getAllByPovnaNazva(String povnaNazva);
-    List<InfoProVydannia> getAllByKorotkaNazva(String korotkaNazva);
+    InfoProVydannia getOneByKorotkaNazva(String korotkaNazva);
     List<InfoProVydannia> getAllByVydVydannia(VydVydannia vydVydannia);
     List<InfoProVydannia> getAllByInfoProAvtora1(InfoProAvtora infoProAvtora1);
     List<InfoProVydannia> getAllByInfoProAvtora2(InfoProAvtora infoProAvtora2);

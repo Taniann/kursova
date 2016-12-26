@@ -17,10 +17,10 @@ public class InfoProVydannia {
     @Column
     private String povnaNazva;
 
-    @Column
+    @Column(unique = true)
     private String korotkaNazva;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private VydVydannia vydVydannia;
 
@@ -28,14 +28,14 @@ public class InfoProVydannia {
     private Integer kilkistStorinok;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private VydObkladynky vydObkladynky;
 
     @Column
     private Long tyrazh;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private Format format;
 
@@ -43,15 +43,15 @@ public class InfoProVydannia {
     @JoinColumn
     private SposibDruku sposibDruku;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private InfoProAvtora infoProAvtora1;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private InfoProAvtora infoProAvtora2;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private InfoProAvtora infoProAvtora3;
 

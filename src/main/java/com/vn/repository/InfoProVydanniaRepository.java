@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface InfoProVydanniaRepository extends JpaRepository<InfoProVydannia, Long> {
     List<InfoProVydannia> findAllByPovnaNazva(@Param("povnaNazva") String povnaNazva);
-    List<InfoProVydannia> findAllByKorotkaNazva(@Param("korotkaNazva") String korotkaNazva);
+    InfoProVydannia findOneByKorotkaNazva(@Param("korotkaNazva") String korotkaNazva);
     List<InfoProVydannia> findAllByVydVydannia(@Param("vydVydannia") VydVydannia vydVydannia);
     List<InfoProVydannia> findAllByInfoProAvtora1(@Param("infoProAvtora1") InfoProAvtora infoProAvtora1);
     List<InfoProVydannia> findAllByInfoProAvtora2(@Param("infoProAvtora2") InfoProAvtora infoProAvtora2);

@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by Таня on 21.12.2016.
@@ -56,8 +58,8 @@ public class InfoProVydanniaController {
         return infoProVydanniaService.getAllByPovnaNazva(povnaNazva);}
 
     @RequestMapping(path = "/korotkaNazva")
-    public List<InfoProVydannia> getAllByKorotkaNazva(@RequestParam(value="korotkaNazva", required=true) String korotkaNazva) {
-        return infoProVydanniaService.getAllByKorotkaNazva(korotkaNazva);}
+    public InfoProVydannia getOneByKorotkaNazva(@RequestParam(value="korotkaNazva", required=true) String korotkaNazva) {
+        return infoProVydanniaService.getOneByKorotkaNazva(korotkaNazva);}
 
     @RequestMapping(path = "/idVyduVydannia/{idVyduVydannia}")
     public List<InfoProVydannia> getAllByVydVydannia(@PathVariable long idVyduVydannia) {
@@ -78,4 +80,9 @@ public class InfoProVydanniaController {
     public List<InfoProVydannia> getAllByInfoProAvtora3(@PathVariable Long idAvtora) {
         return infoProVydanniaService.getAllByInfoProAvtora3(infoProAvtoraService.getById(idAvtora));
     }
+
+    @RequestMapping(path = "/names")
+    public Set<String> getAllNames() {
+        return infoProVydanniaService.getAll().stream().map(InfoProVydannia::getKorotkaNazva).collect(Collectors.toSet());}
+
 }

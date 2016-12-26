@@ -42,8 +42,8 @@ public class InfoProVydanniaServiceImpl implements InfoProVydanniaService {
     }
 
     @Override
-    public List<InfoProVydannia> getAllByKorotkaNazva(String korotkaNazva) {
-        return infoProVydanniaRepository.findAllByKorotkaNazva(korotkaNazva);
+    public InfoProVydannia getOneByKorotkaNazva(String korotkaNazva) {
+        return infoProVydanniaRepository.findOneByKorotkaNazva(korotkaNazva);
     }
 
     @Override

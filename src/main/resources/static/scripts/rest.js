@@ -265,6 +265,20 @@ function getAllOsobystaInfoVykonavtsiaNames() {
     return response;
 }
 
+function getAllInfoProVydanniaNames() {
+    var response;
+    jQuery.ajax( {
+        url: hostName +'/infoProVydannia/names',
+        async: false,
+        type: 'GET',
+        success: function(r) {
+            response = r;
+        },
+        error: errorFunc
+    } );
+    return response;
+}
+
 function getOneVydyRobotyByNazvaVyduRoboty(nazvaVyduRoboty, successFunc) {
     jQuery.ajax( {
         url: hostName +'/vydyRoboty/nazvaVyduRoboty/?nazvaVyduRoboty=' + nazvaVyduRoboty,

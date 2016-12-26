@@ -6,6 +6,7 @@ import com.vn.entity.Techcard;
 import com.vn.entity.VydRoboty;
 import com.vn.repository.OsobystaInfoVykonavtsiaRepository;
 import com.vn.repository.TechcardRepository;
+import com.vn.service.InfoProVydanniaService;
 import com.vn.service.OsobystaInfoVykonavtsiaService;
 import com.vn.service.TechcardService;
 import com.vn.service.VydRobotyService;
@@ -29,11 +30,16 @@ public class TechcardServiceImpl implements TechcardService {
     private OsobystaInfoVykonavtsiaService osobystaInfoVykonavtsiaService;
     @Autowired
     private VydRobotyService vydRobotyService;
+    @Autowired
+    private InfoProVydanniaService infoProVydanniaService;
+
 
     @Override
     public Techcard addTechcard(Techcard techcard) {
         techcard.setOsobystaInfoVykonavtsia(osobystaInfoVykonavtsiaService.getOneByPib(techcard.getOsobystaInfoVykonavtsia().getPib()));
         techcard.setVydRoboty(vydRobotyService.getOneByNazvaVyduRoboty(techcard.getVydRoboty().getNazvaVyduRoboty()));
+        techcard.setInfoProVydannia(infoProVydanniaService.getOneByKorotkaNazva(techcard.getInfoProVydannia().getKorotkaNazva()));
+
         return techcardRepository.saveAndFlush(techcard);
     }
 

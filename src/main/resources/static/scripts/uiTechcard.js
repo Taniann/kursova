@@ -105,7 +105,7 @@ $( document ).ready(function() {
                 "data" : "idTechCarty"
             }, {
                 "data" : {
-                    _:    "infoProVydannia.idVydannia"
+                    _:    "infoProVydannia.korotkaNazva"
                 }
             }, {
                 "data" : {
@@ -198,7 +198,9 @@ $( document ).ready(function() {
             name: "idTechCarty"
         }, {
             label: "№ Видання:",
-            name: "infoProVydannia.idVydannia"
+            name: "infoProVydannia.korotkaNazva",
+            type: "select",
+            options:getAllInfoProVydanniaNames()
         }, {
             label: "Виконавець:",
             name: "osobystaInfoVykonavtsia.pib",
@@ -282,7 +284,7 @@ $( document ).ready(function() {
             name: "idTechCarty"
         }, {
             label: "Last name:",
-            name: "infoProVydannia.idVydannia"
+            name: "infoProVydannia.korotkaNazva"
         }, {
             label: "Position:",
             name: "osobystaInfoVykonavtsia.pib"
@@ -362,7 +364,7 @@ $( document ).ready(function() {
             name: "idTechCarty"
         }, {
             label: "Last name:",
-            name: "infoProVydannia.idVydannia"
+            name: "infoProVydannia.korotkaNazva"
         }, {
             label: "Position:",
             name: "osobystaInfoVykonavtsia.pib"

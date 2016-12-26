@@ -21,15 +21,15 @@ public class Techcard {
     @Column
     private Long idTechCarty;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+   // @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn
     private VydRoboty vydRoboty; //one to many
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 //    @PrimaryKeyJoinColumn
     private OsobystaInfoVykonavtsia osobystaInfoVykonavtsia;
 
