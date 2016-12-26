@@ -14,7 +14,7 @@ public interface OsobystaInfoVykonavtsiaService {
     void delete(long idVykonavcia);
     OsobystaInfoVykonavtsia getById(long idVykonavcia);
     List<OsobystaInfoVykonavtsia> getAllByIdentyfKod(long identyfKod);
-    List<OsobystaInfoVykonavtsia> getAllByPib(String pib);
+    OsobystaInfoVykonavtsia getOneByPib(String pib);
     List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(Date dataPryiomuNaRobotu1, Date dataPryiomuNaRobotu2 );
     List<OsobystaInfoVykonavtsia> getAllByPidrozdil(Pidrozdil pidrozdil);
     OsobystaInfoVykonavtsia editOsobystaInfoVykonavtsia(OsobystaInfoVykonavtsia osobystaInfoVykonavtsia);

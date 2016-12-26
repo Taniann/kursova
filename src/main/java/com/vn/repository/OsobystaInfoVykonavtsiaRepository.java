@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface OsobystaInfoVykonavtsiaRepository extends JpaRepository<OsobystaInfoVykonavtsia, Long> {
     List<OsobystaInfoVykonavtsia> findAllByIdentyfKod(@Param("identyfKod") long identyfKod);
-    List<OsobystaInfoVykonavtsia> findAllByPib(@Param("pib") String pib);
+    OsobystaInfoVykonavtsia findOneByPib(@Param("pib") String pib);
     List<OsobystaInfoVykonavtsia> findAllByDataPryiomuNaRobotuBetween(@Param("dataPryiomuNaRobotu1") Date dataPryiomuNaRobotu1,
                                                                       @Param("dataPryiomuNaRobotu2") Date dataPryiomuNaRobotu2);
     List<OsobystaInfoVykonavtsia> findAllByPidrozdil(@Param("pidrozdil") Pidrozdil pidrozdil);

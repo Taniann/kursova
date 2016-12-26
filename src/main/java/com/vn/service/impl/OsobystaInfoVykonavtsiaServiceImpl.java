@@ -41,8 +41,8 @@ public class OsobystaInfoVykonavtsiaServiceImpl implements OsobystaInfoVykonavts
         return osobystaInfoVykonavtsiaRepository.findAllByIdentyfKod(identyfKod);
     }
     @Override
-    public List<OsobystaInfoVykonavtsia> getAllByPib(String pib) {
-        return osobystaInfoVykonavtsiaRepository.findAllByPib(pib);
+    public OsobystaInfoVykonavtsia getOneByPib(String pib) {
+        return osobystaInfoVykonavtsiaRepository.findOneByPib(pib);
     }
     @Override
     public List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(Date dataPryiomuNaRobotu1, Date dataPryiomuNaRobotu2) {

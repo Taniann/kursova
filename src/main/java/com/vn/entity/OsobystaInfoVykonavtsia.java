@@ -20,7 +20,7 @@ public class OsobystaInfoVykonavtsia {
     @Column
     private Long identyfKod;
 
-    @Column
+    @Column(unique = true)
     private String pib;
 
     @Column

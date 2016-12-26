@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by Таня on 21.12.2016.
@@ -52,8 +54,8 @@ public class OsobystaInfoVykonavtsiaController {
         return osobystaInfoVykonavtsiaService.getAllByIdentyfKod(identyfKod);}
 
     @RequestMapping(path = "/pib")
-    public List<OsobystaInfoVykonavtsia> getAllByPib(@RequestParam(value="pib", required=true)String pib) {
-        return osobystaInfoVykonavtsiaService.getAllByPib(pib);}
+    public OsobystaInfoVykonavtsia getOneByPib(@RequestParam(value="pib", required=true)String pib) {
+        return osobystaInfoVykonavtsiaService.getOneByPib(pib);}
 
     @RequestMapping(path = "/vydVydannia/{vydVydannia}")
     public List<OsobystaInfoVykonavtsia> getAllByDataPryiomuNaRobotuBetween(@PathVariable @DateTimeFormat(iso= DateTimeFormat.ISO.DATE) Date dataPryiomuNaRobotu1,
@@ -64,5 +66,9 @@ public class OsobystaInfoVykonavtsiaController {
     public List<OsobystaInfoVykonavtsia> getAllByPidrozdil(@PathVariable long idPidrozdilu) {
         return osobystaInfoVykonavtsiaService.getAllByPidrozdil(pidrozdilService.getById(idPidrozdilu));
     }
+
+    @RequestMapping(path = "/names")
+    public Set<String> getAllNames() {
+        return osobystaInfoVykonavtsiaService.getAll().stream().map(OsobystaInfoVykonavtsia::getPib).collect(Collectors.toSet());}
 
 }

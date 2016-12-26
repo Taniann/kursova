@@ -5,7 +5,10 @@ import com.vn.service.VydRobotyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by nadezhda on 21.12.16.
@@ -40,6 +43,10 @@ public class VydRobotyController {
     @RequestMapping
     public List<VydRoboty> getAll() {
         return vydRobotyService.getAll();}
+
+    @RequestMapping(path = "/names")
+    public Set<String> getAllNames() {
+        return vydRobotyService.getAll().stream().map(VydRoboty::getNazvaVyduRoboty).collect(Collectors.toSet());}
 
     @RequestMapping(path = "/nazvaVyduRoboty")
     public VydRoboty getOneByNazvaVyduRoboty(@RequestParam(value="nazvaVyduRoboty", required=true) String nazvaVyduRoboty) {

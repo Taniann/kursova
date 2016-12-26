@@ -29,8 +29,8 @@ public class Techcard {
     @JoinColumn
     private Set<VydRoboty> vydRobotySet; //one to many
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @PrimaryKeyJoinColumn
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    @PrimaryKeyJoinColumn
     private OsobystaInfoVykonavtsia osobystaInfoVykonavtsia;
 
     @Column

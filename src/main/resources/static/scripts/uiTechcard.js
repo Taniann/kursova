@@ -197,39 +197,43 @@ $( document ).ready(function() {
             label: "№ Техкартки:",
             name: "idTechCarty"
         }, {
-            label: "Last name:",
+            label: "№ Видання:",
             name: "infoProVydannia.idVydannia"
         }, {
-            label: "Position:",
-            name: "osobystaInfoVykonavtsia.pib"
+            label: "Виконавець:",
+            name: "osobystaInfoVykonavtsia.pib",
+            type: "select",
+            options: getAllOsobystaInfoVykonavtsiaNames()
         }, {
-            label: "Office:",
+            label: "Термін початку:",
             name: "terminPochatku",
             type: "datetime"
         }, {
-            label: "Extension:",
+            label: "Термін закінчення:",
             name: "terminZakinchennia",
             type: "datetime"
         }, {
-            label: "Start date:",
+            label: "Фактичний початок:",
             name: "factychnyiPochatok",
             type: "datetime"
         }, {
-            label: "Start date:",
+            label: "Фактичний кінець:",
             name: "factychnyiKinec",
             type: "datetime"
         },{
-            label: "Salary:",
+            label: "Вартість роботи:",
             name: "vartistRoboty"
         },{
-            label: "Salary:",
+            label: "Вартість друку:",
             name: "vartistDruku"
         },{
-            label: "Salary:",
+            label: "Сумарна вартість:",
             name: "sumVartist"
         },{
-            label: "Salary:",
-            name: "VydRoboty.nazvaVyduRoboty"
+            label: "Вид роботи:",
+            name: "VydRoboty.nazvaVyduRoboty",
+            type: "select",
+            options: getAllVydRobotyNames()
         }
         ],
         formOptions: {

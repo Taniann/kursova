@@ -113,12 +113,12 @@ public class Rahunok {
         this.zamovnyk = zamovnyk;
     }
 
-    public Date getDataSplatyy() {
+    public Date getDataSplaty() {
         return dataSplaty;
     }
 
-    public void setDataSplatyy(Date dataSplatyy) {
-        this.dataSplaty = dataSplatyy;
+    public void setDataSplaty(Date dataSplaty) {
+        this.dataSplaty = dataSplaty;
     }
 
     public String getPlatizhneDoruchennia() {

@@ -4,7 +4,9 @@ import com.vn.entity.InfoProVydannia;
 import com.vn.entity.OsobystaInfoVykonavtsia;
 import com.vn.entity.Techcard;
 import com.vn.entity.VydRoboty;
+import com.vn.repository.OsobystaInfoVykonavtsiaRepository;
 import com.vn.repository.TechcardRepository;
+import com.vn.service.OsobystaInfoVykonavtsiaService;
 import com.vn.service.TechcardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,12 +24,13 @@ public class TechcardServiceImpl implements TechcardService {
 
     @Autowired
     private TechcardRepository techcardRepository;
+    @Autowired
+    private OsobystaInfoVykonavtsiaService osobystaInfoVykonavtsiaService;
 
     @Override
     public Techcard addTechcard(Techcard techcard) {
-        Techcard savedTechcard = techcardRepository.save(techcard);
-
-        return savedTechcard;
+        techcard.setOsobystaInfoVykonavtsia(osobystaInfoVykonavtsiaService.getOneByPib(techcard.getOsobystaInfoVykonavtsia().getPib()));
+        return techcardRepository.saveAndFlush(techcard);
     }
 
     @Override
