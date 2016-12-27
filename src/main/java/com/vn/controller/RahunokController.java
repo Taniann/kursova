@@ -34,7 +34,7 @@ public class RahunokController {
         return rahunokService.addRahunok(rahunok);
     }
 
-    @RequestMapping(value = "/delete/{idRahunku}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(@RequestBody Rahunok rahunok) {
 
         rahunokService.delete(rahunok.getIdRahunku());

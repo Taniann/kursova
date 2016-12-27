@@ -283,11 +283,15 @@ $( document ).ready(function() {
             label: "№ Техкартки:",
             name: "idTechCarty"
         }, {
-            label: "Last name:",
-            name: "infoProVydannia.korotkaNazva"
+            label: "№ Видання:",
+            name: "infoProVydannia.korotkaNazva",
+            type: "select",
+            options:getAllInfoProVydanniaNames()
         }, {
-            label: "Position:",
-            name: "osobystaInfoVykonavtsia.pib"
+            label: "Виконавець:",
+            name: "osobystaInfoVykonavtsia.pib",
+            type: "select",
+            options: getAllOsobystaInfoVykonavtsiaNames()
         }, {
             label: "Office:",
             name: "terminPochatku",
@@ -314,8 +318,10 @@ $( document ).ready(function() {
             label: "Salary:",
             name: "sumVartist"
         },{
-            label: "Salary:",
-            name: "vydRoboty.nazvaVyduRoboty"
+            label: "Вид роботи:",
+            name: "vydRoboty.nazvaVyduRoboty",
+            type: "select",
+            options: getAllVydRobotyNames()
         }
         ],
         formOptions: {

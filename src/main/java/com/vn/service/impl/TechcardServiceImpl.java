@@ -55,6 +55,9 @@ public class TechcardServiceImpl implements TechcardService {
 
     @Override
     public Techcard editTechcard(Techcard techcard) {
+        techcard.setOsobystaInfoVykonavtsia(osobystaInfoVykonavtsiaService.getOneByPib(techcard.getOsobystaInfoVykonavtsia().getPib()));
+        techcard.setVydRoboty(vydRobotyService.getOneByNazvaVyduRoboty(techcard.getVydRoboty().getNazvaVyduRoboty()));
+        techcard.setInfoProVydannia(infoProVydanniaService.getOneByKorotkaNazva(techcard.getInfoProVydannia().getKorotkaNazva()));
         return techcardRepository.save(techcard);
     }
 
