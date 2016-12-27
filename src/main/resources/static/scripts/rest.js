@@ -667,6 +667,20 @@ function getOneRahunokByZamovnyk(zamovnyk, successFunc) {
     } );
 }
 
+function getAllTechcardNames() {
+    var response;
+    jQuery.ajax( {
+        url: hostName +'/techcards/names',
+        async: false,
+        type: 'GET',
+        success: function(r) {
+            response = r;
+        },
+        error: errorFunc
+    } );
+    return response;
+}
+
 //////////////
 ///pidrozdil///
 //////////////

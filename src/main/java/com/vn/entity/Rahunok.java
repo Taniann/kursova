@@ -13,7 +13,7 @@ import java.util.Date;
 @Table
 public class Rahunok {
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @PrimaryKeyJoinColumn
     private InfoProVydannia infoProVydannia;
 
@@ -23,7 +23,7 @@ public class Rahunok {
     private Long idRahunku;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @PrimaryKeyJoinColumn
     private Techcard techcard;
 

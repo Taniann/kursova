@@ -4,7 +4,9 @@ import com.vn.entity.InfoProVydannia;
 import com.vn.entity.Rahunok;
 import com.vn.entity.Techcard;
 import com.vn.repository.RahunokRepository;
+import com.vn.service.InfoProVydanniaService;
 import com.vn.service.RahunokService;
+import com.vn.service.TechcardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +21,17 @@ public class RahunokServiceImpl implements RahunokService {
 
     @Autowired
     private RahunokRepository rahunokRepository;
+    @Autowired
+    private InfoProVydanniaService infoProVydanniaService;
+    @Autowired
+    private TechcardService techcardService;
 
     @Override
     public Rahunok addRahunok(Rahunok rahunok) {
-        Rahunok savedRahunok = rahunokRepository.saveAndFlush(rahunok);
+        rahunok.setTechcard(techcardService.getById(rahunok.getTechcard().getIdTechCarty()));
 
-        return savedRahunok;
+
+        return rahunokRepository.saveAndFlush(rahunok);
     }
 
     @Override

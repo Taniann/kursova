@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by nadezhda on 20.12.16.
@@ -104,5 +105,10 @@ public class TechcardController {
     public List<Techcard> getAllBySumVartist(@PathVariable Double sumVartist ) {
         return techcardService.getAllBySumVartist(sumVartist);
     }
+
+
+    @RequestMapping(path = "/names")
+    public Set<Long> getAllNames() {
+        return techcardService.getAll().stream().map(Techcard::getIdTechCarty).collect(Collectors.toSet());}
 }
 

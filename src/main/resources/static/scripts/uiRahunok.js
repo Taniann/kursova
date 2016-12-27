@@ -139,7 +139,9 @@ $( document ).ready(function() {
         idSrc: "idRahunku",
         fields: [{
             label: "№ Техкартки:",
-            name: "techcard.idTechCarty"
+            name: "techcard.idTechCarty",
+            type: "select",
+            options: getAllTechcardNames()
         }, {
             label: "Дата виписки:",
             name: "dataVypysky",
